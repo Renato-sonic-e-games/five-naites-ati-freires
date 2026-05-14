@@ -63,6 +63,16 @@ namespace five_naites_ati_freires.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap celular {
+            get {
+                object obj = ResourceManager.GetObject("celular", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap foxy_jumpscare {
             get {
                 object obj = ResourceManager.GetObject("foxy-jumpscare", resourceCulture);
@@ -83,9 +93,49 @@ namespace five_naites_ati_freires.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap janela {
+            get {
+                object obj = ResourceManager.GetObject("janela", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap transitiontest {
             get {
                 object obj = ResourceManager.GetObject("transitiontest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap transitiontest_ezgif_com_loop_count {
+            get {
+                object obj = ResourceManager.GetObject("transitiontest-ezgif.com-loop-count", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap transitiontest_ezgif_com_reverse {
+            get {
+                object obj = ResourceManager.GetObject("transitiontest-ezgif.com-reverse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap transitiontest1 {
+            get {
+                object obj = ResourceManager.GetObject("transitiontest1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
