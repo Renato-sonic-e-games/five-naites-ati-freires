@@ -29,28 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            btnJanela = new Button();
             timerGeral = new System.Windows.Forms.Timer(components);
             lblContador = new Label();
             SuspendLayout();
-            // 
-            // btnJanela
-            // 
-            btnJanela.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            btnJanela.BackColor = Color.Transparent;
-            btnJanela.BackgroundImageLayout = ImageLayout.Stretch;
-            btnJanela.FlatAppearance.BorderSize = 0;
-            btnJanela.FlatStyle = FlatStyle.Flat;
-            btnJanela.ForeColor = SystemColors.ActiveCaptionText;
-            btnJanela.Location = new Point(726, -6);
-            btnJanela.Name = "btnJanela";
-            btnJanela.Size = new Size(82, 463);
-            btnJanela.TabIndex = 0;
-            btnJanela.UseVisualStyleBackColor = false;
-            btnJanela.Click += button1_Click;
-            btnJanela.MouseEnter += btnJanela_MouseEnter;
-            btnJanela.MouseLeave += btnJanela_MouseLeave;
-            btnJanela.MouseHover += btnJanela_MouseHover;
             // 
             // timerGeral
             // 
@@ -75,7 +56,6 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(lblContador);
-            Controls.Add(btnJanela);
             DoubleBuffered = true;
             Name = "Form1";
             Text = "FNAFreire";
@@ -85,8 +65,6 @@
         }
 
         #endregion
-
-        private Button btnJanela;
         private Label lblContador;
         private System.Windows.Forms.Timer timerGeral;
     }

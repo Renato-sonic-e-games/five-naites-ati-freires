@@ -73,6 +73,16 @@ namespace five_naites_ati_freires.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dv1 {
+            get {
+                object obj = ResourceManager.GetObject("dv1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap foxy_jumpscare {
             get {
                 object obj = ResourceManager.GetObject("foxy-jumpscare", resourceCulture);
@@ -136,6 +146,26 @@ namespace five_naites_ati_freires.Properties {
         internal static System.Drawing.Bitmap transitiontest1 {
             get {
                 object obj = ResourceManager.GetObject("transitiontest1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tripitripi {
+            get {
+                object obj = ResourceManager.GetObject("tripitripi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tripitripi_ezgif_com_reverse {
+            get {
+                object obj = ResourceManager.GetObject("tripitripi-ezgif.com-reverse", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
