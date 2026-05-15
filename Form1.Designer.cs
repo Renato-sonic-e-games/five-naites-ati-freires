@@ -46,13 +46,12 @@
             lblContador.Size = new Size(44, 15);
             lblContador.TabIndex = 1;
             lblContador.Text = "Timer: ";
-            lblContador.Click += label1_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.fv1;
+            BackgroundImage = Properties.Resources.fv2;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(lblContador);

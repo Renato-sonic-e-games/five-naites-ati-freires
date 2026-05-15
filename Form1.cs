@@ -18,7 +18,7 @@ namespace five_naites_ati_freires
         // 1 = com ele
         Button btnMoverE;
         Button btnMoverD;
-        
+        PictureBox transicao;
 
         void gameover()
         {
@@ -32,6 +32,7 @@ namespace five_naites_ati_freires
                  (this.ClientSize.Height - jumpscare.Height) / 2);
             jumpscare.BackColor = Color.Transparent;
             this.Controls.Add(jumpscare);
+            desabilitarBotoes();
             timerGeral.Stop();
 
         }
@@ -50,18 +51,26 @@ namespace five_naites_ati_freires
                 btnMoverE = null;
             }
         }
+        void criarTransicao()
+        {
+            transicao = new PictureBox();
+            transicao.Width = this.ClientSize.Width;
+            transicao.Height = this.ClientSize.Height;
+            transicao.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
         void criarbtnE()
         {
             if (btnMoverE == null)
             {
                 btnMoverE = new Button();
                 btnMoverE.Text = " ";
-                btnMoverE.BackColor = Color.Transparent;
+                btnMoverE.BackColor = Color.White;
                 btnMoverE.FlatStyle = FlatStyle.Flat;
                 btnMoverE.FlatAppearance.BorderSize = 0;
                 btnMoverE.MouseEnter += btnMoverE_MouseEnter;
-                btnMoverE.Location = new Point(-7, -6);
-                btnMoverE.Size = new Size(82, 463);
+                btnMoverE.Location = new Point(0, 0);
+                btnMoverE.Size = new Size(this.ClientSize.Width / 8, this.ClientSize.Height);
+                btnMoverE.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Bottom);
                 this.Controls.Add(btnMoverE);
             }
         }
@@ -71,98 +80,53 @@ namespace five_naites_ati_freires
             {
                 btnMoverD = new Button();
                 btnMoverD.Text = " ";
-                btnMoverD.BackColor = Color.Transparent;
+                btnMoverD.BackColor = Color.Red;
                 btnMoverD.FlatStyle = FlatStyle.Flat;
                 btnMoverD.FlatAppearance.BorderSize = 0;
                 btnMoverD.MouseEnter += btnMoverD_MouseEnter;
-                btnMoverD.Location = new Point(726, -6);
-                btnMoverD.Size = new Size(82, 463);
+                btnMoverD.Size = new Size(this.ClientSize.Width / 8, this.ClientSize.Height);
+                btnMoverD.Location = new Point(
+                    (this.ClientSize.Width - btnMoverD.Width),
+                    (0)
+                    );
+                btnMoverD.Anchor = (AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom);
                 this.Controls.Add(btnMoverD);
             }
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            criarbtnD();
-            criarbtnE();
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnMoverD_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-        async Task transicaoJanela()
-        {
-
-                direcao = 1;
-
-                PictureBox transicao = new PictureBox();
-                transicao.Width = this.ClientSize.Width;
-                transicao.Height = this.ClientSize.Height;
-                transicao.SizeMode = PictureBoxSizeMode.StretchImage;
-                transicao.Image = Properties.Resources.transitiontest1;
-                this.Controls.Add(transicao);
-                await Task.Delay(950);
-                this.Controls.Remove(transicao);
-                transicao.Dispose();
-                transicao = null;
-            
-        }
-
-        private void btnMoverD_MouseEnter(object sender, EventArgs e)
-        {
-            desabilitarBotoes();
-            switch (direcao)
-            {
-                case 0:
-                    transicaoJanela();
-                    this.BackgroundImage = Properties.Resources.wv1;
-                    this.BackgroundImageLayout = ImageLayout.Stretch;
-                    criarbtnE();
-                    break;
-                case 2:
-                    transicaoLousa2();
-                    this.BackgroundImage = Properties.Resources.fv1;
-                    this.BackgroundImageLayout = ImageLayout.Stretch;
-                    criarbtnE();
-                    criarbtnD();
-                    break;
-                default:
-                    break;
-            }
-
         }
         async Task transicaoLousa()
         {
 
             desabilitarBotoes();
-            PictureBox transicao = new PictureBox();
-            transicao.Width = this.ClientSize.Width;
-            transicao.Height = this.ClientSize.Height;
-            transicao.SizeMode = PictureBoxSizeMode.StretchImage;
-            transicao.Image = Properties.Resources.transitiontest_ezgif_com_reverse;
+            criarTransicao();
+            transicao.Image = Properties.Resources.wtol;
             this.Controls.Add(transicao);
-            await Task.Delay(950);
+            await Task.Delay(1000);
             this.Controls.Remove(transicao);
             transicao.Dispose();
             transicao = null;
             direcao = 0;
         }
+        async Task transicaoJanela()
+        {
+
+            direcao = 1;
+            criarTransicao();
+            transicao.Image = Properties.Resources.ltow;
+            this.Controls.Add(transicao);
+            await Task.Delay(1000);
+            this.Controls.Remove(transicao);
+            transicao.Dispose();
+            transicao = null;
+
+        }
         async Task transicaoLousa2()
         {
 
             desabilitarBotoes();
-            PictureBox transicao = new PictureBox();
-            transicao.Width = this.ClientSize.Width;
-            transicao.Height = this.ClientSize.Height;
-            transicao.SizeMode = PictureBoxSizeMode.StretchImage;
-            transicao.Image = Properties.Resources.tripitripi_ezgif_com_reverse;
+            criarTransicao();
+            transicao.Image = Properties.Resources.dtol;
             this.Controls.Add(transicao);
-            await Task.Delay(950);
+            await Task.Delay(1000);
             this.Controls.Remove(transicao);
             transicao.Dispose();
             transicao = null;
@@ -174,31 +138,57 @@ namespace five_naites_ati_freires
             direcao = 2;
 
             desabilitarBotoes();
-            PictureBox transicao = new PictureBox();
-            transicao.Width = this.ClientSize.Width;
-            transicao.Height = this.ClientSize.Height;
-            transicao.SizeMode = PictureBoxSizeMode.StretchImage;
-            transicao.Image = Properties.Resources.tripitripi;
+            criarTransicao();
+            transicao.Image = Properties.Resources.ltod;
             this.Controls.Add(transicao);
-            await Task.Delay(950);
+            await Task.Delay(1000);
             this.Controls.Remove(transicao);
             transicao.Dispose();
             transicao = null;
         }
-        private void btnMoverE_MouseEnter(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            criarbtnD();
+            criarbtnE();
+                
+        }
+        private async void btnMoverD_MouseEnter(object sender, EventArgs e)
         {
             desabilitarBotoes();
             switch (direcao)
             {
                 case 0:
-                    transicaoPorta();
-                    this.BackgroundImage = Properties.Resources.dv1;
+                    await transicaoJanela();
+                    this.BackgroundImage = Properties.Resources.wv2;
+                    this.BackgroundImageLayout = ImageLayout.Stretch;
+                    criarbtnE();
+                    break;
+                case 2:
+                    await transicaoLousa2();
+                    this.BackgroundImage = Properties.Resources.fv2;
+                    this.BackgroundImageLayout = ImageLayout.Stretch;
+                    criarbtnE();
+                    criarbtnD();
+                    break;
+                default:
+                    break;
+            }
+
+        }
+        private async void btnMoverE_MouseEnter(object sender, EventArgs e)
+        {
+            desabilitarBotoes();
+            switch (direcao)
+            {
+                case 0:
+                    await transicaoPorta();
+                    this.BackgroundImage = Properties.Resources.dv2;
                     this.BackgroundImageLayout = ImageLayout.Stretch;
                     criarbtnD();
                     break;
                 case 1:
-                    transicaoLousa();
-                    this.BackgroundImage = Properties.Resources.fv1;
+                    await transicaoLousa();
+                    this.BackgroundImage = Properties.Resources.fv2;
                     this.BackgroundImageLayout = ImageLayout.Stretch;
                     criarbtnD();
                     criarbtnE();
@@ -208,28 +198,16 @@ namespace five_naites_ati_freires
             }
         }
 
-        private void btnMoverD_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-
 
         private void timerProva_tick(object sender, EventArgs e)
         {
             tempo++;
             lblContador.Text = "Timer: " + tempo;
-            if (tempo == 300)
+            if (tempo == 10)
             {
                 gameover();
 
             }
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

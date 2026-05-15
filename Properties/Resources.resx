@@ -118,17 +118,44 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="transitiontest" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\transitiontest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="celular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\celular.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ltod" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ltod.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dv1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dv1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wv1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wv1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tripitripi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tripitripi.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="celular" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\celular.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ltow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ltow.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dv1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dv1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fv2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fv2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="foxy-jumpscare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\foxy-jumpscare.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tripitripi-ezgif.com-reverse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tripitripi-ezgif.com-reverse.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dtol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dtol.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fv1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fv1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wtol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wtol.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="transitiontest-ezgif.com-reverse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transitiontest-ezgif.com-reverse.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="janela" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\janela.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,19 +166,13 @@
   <data name="transitiontest-ezgif.com-loop-count" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\transitiontest-ezgif.com-loop-count.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fv1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fv1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="transitiontest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transitiontest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wv1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wv1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dv2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dv2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="transitiontest-ezgif.com-reverse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\transitiontest-ezgif.com-reverse.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="foxy-jumpscare" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\foxy-jumpscare.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tripitripi-ezgif.com-reverse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tripitripi-ezgif.com-reverse.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="wv2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wv2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
