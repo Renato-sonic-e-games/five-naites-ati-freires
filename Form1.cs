@@ -105,7 +105,7 @@ namespace five_naites_ati_freires
             {
                 btnMoverE = new Button();
                 btnMoverE.Text = " ";
-                btnMoverE.BackColor = Color.White;
+                btnMoverE.BackColor = Color.Transparent;
                 btnMoverE.FlatStyle = FlatStyle.Flat;
                 btnMoverE.FlatAppearance.BorderSize = 0;
                 btnMoverE.MouseEnter += btnMoverE_MouseEnter;
@@ -242,6 +242,12 @@ namespace five_naites_ati_freires
                 pcelular.Dispose();
                 pcelular = null;
             }
+        }
+        void pararCelular()
+        { 
+            timerC.Stop();
+            tempoRespo = 0;
+            lblRespostas.Text = "0";
         }
         async Task transicaoCelular()
         {
@@ -436,6 +442,8 @@ namespace five_naites_ati_freires
                 fecharCelular();
                 celular = 0;
                 lblteste.Text = "teste: " + celular;
+                pararCelular();
+                return;
             }
             if (celular == 0)
             {
@@ -443,6 +451,7 @@ namespace five_naites_ati_freires
                 btnCell.Text = "Fechar celular";
                 celular = 1;
                 lblteste.Text = "teste: " + celular;
+                return;
             }
         }
 
