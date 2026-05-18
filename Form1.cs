@@ -6,7 +6,7 @@ namespace five_naites_ati_freires
         {
             InitializeComponent();
             timerGeral.Start();
-
+            
         }
         int tempo = 0;
         int tempoRespo = 0;
@@ -26,6 +26,8 @@ namespace five_naites_ati_freires
         Button btnMoverC;
         Button btnCell;
         PictureBox transicao;
+
+        
         private void timerC_Tick(object sender, EventArgs e)
         {
             tempoRespo++;
@@ -39,9 +41,9 @@ namespace five_naites_ati_freires
                 }
             }
             lblC.Text = "nr res: " + resposta;
-            lblRespostas.Text = "tempo celular: " + (tempoRespo*100)/(10*1) +"%";
+            lblRespostas.Text = "tempo celular: " + (tempoRespo * 100) / (10 * 1) + "%";
         }
-            void gameover()
+        void gameover()
         {
             PictureBox jumpscare = new PictureBox();
             jumpscare.Width = this.ClientSize.Width;
@@ -170,43 +172,55 @@ namespace five_naites_ati_freires
             if (btnCell == null)
             {
                 btnCell = new Button();
-                btnCell.Text = "Abrir Celular";
                 btnCell.BackColor = Color.White;
                 btnCell.FlatStyle = FlatStyle.Flat;
                 btnCell.FlatAppearance.BorderSize = 0;
-                btnCell.MouseEnter += btnCell_MouseEnter;
+                btnCell.MouseClick += btnCell_MouseEnter;
+                if (celular == 0)
+                {
+                    btnCell.Text = "Abrir celular";
+                }
+                if (celular == 1)
+                {
+                    btnCell.Text = "Fechar celular";
+                }
                 tamanhoBtnCell();
                 this.Resize += (s, e) => tamanhoBtnCell();
+                this.Controls.Add(btnCell);
             }
+
+
+
         }
         void tamanhoBtnCell()
         {
-            btnCell.Size = new Size(this.ClientSize.Width / 4, this.ClientSize.Height / 4);
-            btnCell.Location = new Point(
-                (this.ClientSize.Width / 2),
-                (this.ClientSize.Height / 2)
-                );
-                
+
+            if (btnCell != null) {
+                btnCell.Size = new Size(this.ClientSize.Width / 4, this.ClientSize.Height / 4);
+                btnCell.Location = new Point(
+                    (this.ClientSize.Width / 2),
+                    (this.ClientSize.Height / 2)
+                    );
+            }
+
         }
-            PictureBox pcelular;
+        PictureBox pcelular;
 
         void abrirCelular()
         {
             if (pcelular == null)
             {
                 pcelular = new PictureBox();
-
                 pcelular.Image = Properties.Resources.celular;
                 pcelular.BackColor = Color.Transparent;
                 pcelular.SizeMode = PictureBoxSizeMode.StretchImage;
                 tamanhoCelular();
-
                 this.Controls.Add(pcelular);
                 timerC.Start();
                 this.Resize += (s, e) => tamanhoCelular();
             }
-
         }
+
         void tamanhoCelular()
         {
             pcelular.Size = new Size
@@ -232,7 +246,12 @@ namespace five_naites_ati_freires
         async Task transicaoCelular()
         {
             direcao = 3;
-            desabilitarBotoes();
+            if (btnCell != null)
+            {
+                this.Controls.Remove(btnCell);
+                btnCell.Dispose();
+                btnCell = null;
+            }
             criarTransicao();
             transicao.Image = Properties.Resources.ltoc;
             this.Controls.Add(transicao);
@@ -240,6 +259,7 @@ namespace five_naites_ati_freires
             this.Controls.Remove(transicao);
             transicao.Dispose();
             transicao = null;
+            lbldirecao.Text = "direcao: " + direcao;
         }
         async Task transicaoLousa()
         {
@@ -253,6 +273,7 @@ namespace five_naites_ati_freires
             transicao.Dispose();
             transicao = null;
             direcao = 0;
+            lbldirecao.Text = "direcao: " + direcao;
         }
         async Task transicaoJanela()
         {
@@ -265,6 +286,7 @@ namespace five_naites_ati_freires
             this.Controls.Remove(transicao);
             transicao.Dispose();
             transicao = null;
+            lbldirecao.Text = "direcao: " + direcao;
 
         }
         async Task transicaoLousa2()
@@ -279,6 +301,7 @@ namespace five_naites_ati_freires
             transicao.Dispose();
             transicao = null;
             direcao = 0;
+            lbldirecao.Text = "direcao: " + direcao;
         }
         async Task transicaoLousa3()
         {
@@ -292,6 +315,7 @@ namespace five_naites_ati_freires
             transicao.Dispose();
             transicao = null;
             direcao = 0;
+            lbldirecao.Text = "direcao: " + direcao;
         }
         async Task transicaoPorta()
         {
@@ -306,6 +330,7 @@ namespace five_naites_ati_freires
             this.Controls.Remove(transicao);
             transicao.Dispose();
             transicao = null;
+            lbldirecao.Text = "direcao: " + direcao;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -313,6 +338,7 @@ namespace five_naites_ati_freires
             criarbtnD();
             criarbtnE();
             criarbtnB();
+
         }
         private async void btnMoverD_MouseEnter(object sender, EventArgs e)
         {
@@ -349,6 +375,10 @@ namespace five_naites_ati_freires
                     this.BackgroundImageLayout = ImageLayout.Stretch;
                     criarbtnAbrirC();
                     criarbtnC();
+                    if (celular == 1)
+                    { 
+                        abrirCelular();
+                    }
                     break;
                 default:
                     break;
@@ -362,7 +392,7 @@ namespace five_naites_ati_freires
             {
                 case 3:
                     desabilitarBotoes();
-                    fecharCelular();
+                        fecharCelular();
                     await transicaoLousa3();
                     this.BackgroundImage = Properties.Resources.fv2;
                     this.BackgroundImageLayout = ImageLayout.Stretch;
@@ -400,14 +430,19 @@ namespace five_naites_ati_freires
         }
         private async void btnCell_MouseEnter(object sender, EventArgs e)
         {
-            desabilitarBotoes();
-            switch (direcao)
+            if (celular == 1)
             {
-                case 3:
-                    abrirCelular();
-                    break;
-                default:
-                    break;
+                btnCell.Text = "Abrir celular";
+                fecharCelular();
+                celular = 0;
+                lblteste.Text = "teste: " + celular;
+            }
+            if (celular == 0)
+            {
+                abrirCelular();
+                btnCell.Text = "Fechar celular";
+                celular = 1;
+                lblteste.Text = "teste: " + celular;
             }
         }
 
@@ -422,5 +457,7 @@ namespace five_naites_ati_freires
 
             }
         }
+
     }
 }
+
