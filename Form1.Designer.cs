@@ -34,6 +34,8 @@
             timerC = new System.Windows.Forms.Timer(components);
             lblRespostas = new Label();
             lblC = new Label();
+            lblteste = new Label();
+            lbldirecao = new Label();
             SuspendLayout();
             // 
             // timerGeral
@@ -46,7 +48,7 @@
             lblContador.AutoSize = true;
             lblContador.Location = new Point(49, 35);
             lblContador.Name = "lblContador";
-            lblContador.Size = new Size(44, 15);
+            lblContador.Size = new Size(43, 15);
             lblContador.TabIndex = 1;
             lblContador.Text = "Timer: ";
             // 
@@ -73,6 +75,24 @@
             lblC.TabIndex = 3;
             lblC.Text = "celular timer";
             // 
+            // lblteste
+            // 
+            lblteste.AutoSize = true;
+            lblteste.Location = new Point(49, 110);
+            lblteste.Name = "lblteste";
+            lblteste.Size = new Size(38, 15);
+            lblteste.TabIndex = 4;
+            lblteste.Text = "teste: ";
+            // 
+            // lbldirecao
+            // 
+            lbldirecao.AutoSize = true;
+            lbldirecao.Location = new Point(727, 46);
+            lbldirecao.Name = "lbldirecao";
+            lbldirecao.Size = new Size(52, 15);
+            lbldirecao.TabIndex = 5;
+            lbldirecao.Text = "direcao: ";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -80,6 +100,8 @@
             BackgroundImage = Properties.Resources.fv2;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(lbldirecao);
+            Controls.Add(lblteste);
             Controls.Add(lblC);
             Controls.Add(lblRespostas);
             Controls.Add(lblContador);
@@ -97,5 +119,8 @@
         private System.Windows.Forms.Timer timerC;
         private Label lblRespostas;
         private Label lblC;
+        private Label lblteste;
+        private Label lbldirecao;
     }
 }
+
