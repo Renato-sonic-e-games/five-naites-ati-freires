@@ -9,18 +9,39 @@ namespace five_naites_ati_freires
 
         }
         int tempo = 0;
+        int tempoRespo = 0;
+        int resposta = 0;
+        int perguntas = 0;
         int direcao = 0;
         // 0 = front view
         // 1 = window view
         // 2 = door view
+        // 3 = phone view
         int celular = 0;
         // 0 = sem
         // 1 = com ele
         Button btnMoverE;
         Button btnMoverD;
+        Button btnMoverB;
+        Button btnMoverC;
+        Button btnCell;
         PictureBox transicao;
-
-        void gameover()
+        private void timerC_Tick(object sender, EventArgs e)
+        {
+            tempoRespo++;
+            int respostaEscala = (perguntas * 5) + 5;
+            if (tempoRespo == 10)
+            {
+                if (resposta < 1)
+                {
+                    resposta++;
+                    timerC.Stop();
+                }
+            }
+            lblC.Text = "nr res: " + resposta;
+            lblRespostas.Text = "tempo celular: " + (tempoRespo*100)/(10*1) +"%";
+        }
+            void gameover()
         {
             PictureBox jumpscare = new PictureBox();
             jumpscare.Width = this.ClientSize.Width;
@@ -50,6 +71,24 @@ namespace five_naites_ati_freires
                 btnMoverE.Dispose();
                 btnMoverE = null;
             }
+            if (btnMoverB != null)
+            {
+                this.Controls.Remove(btnMoverB);
+                btnMoverB.Dispose();
+                btnMoverB = null;
+            }
+            if (btnMoverC != null)
+            {
+                this.Controls.Remove(btnMoverC);
+                btnMoverC.Dispose();
+                btnMoverC = null;
+            }
+            if (btnCell != null)
+            {
+                this.Controls.Remove(btnCell);
+                btnCell.Dispose();
+                btnCell = null;
+            }
         }
         void criarTransicao()
         {
@@ -74,6 +113,23 @@ namespace five_naites_ati_freires
                 this.Controls.Add(btnMoverE);
             }
         }
+        void criarbtnB()
+        {
+            if (btnMoverB == null)
+            {
+                btnMoverB = new Button();
+                btnMoverB.Text = " ";
+                btnMoverB.BackColor = Color.Gray;
+                btnMoverB.FlatStyle = FlatStyle.Flat;
+                btnMoverB.FlatAppearance.BorderSize = 0;
+                btnMoverB.MouseEnter += btnMoverB_MouseEnter;
+                btnMoverB.Size = new Size(this.ClientSize.Width, this.ClientSize.Height / 8);
+                btnMoverB.Location = new Point(0, this.ClientSize.Height - btnMoverB.Height);
+                btnMoverB.Anchor = (AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Bottom);
+                this.Controls.Add(btnMoverB);
+            }
+        }
+
         void criarbtnD()
         {
             if (btnMoverD == null)
@@ -92,6 +148,98 @@ namespace five_naites_ati_freires
                 btnMoverD.Anchor = (AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom);
                 this.Controls.Add(btnMoverD);
             }
+        }
+        void criarbtnC()
+        {
+            if (btnMoverC == null)
+            {
+                btnMoverC = new Button();
+                btnMoverC.Text = " ";
+                btnMoverC.BackColor = Color.Gray;
+                btnMoverC.FlatStyle = FlatStyle.Flat;
+                btnMoverC.FlatAppearance.BorderSize = 0;
+                btnMoverC.MouseEnter += btnMoverC_MouseEnter;
+                btnMoverC.Size = new Size(this.ClientSize.Width, this.ClientSize.Height / 8);
+                btnMoverC.Location = new Point(0, 0);
+                btnMoverC.Anchor = (AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Bottom);
+                this.Controls.Add(btnMoverC);
+            }
+        }
+        void criarbtnAbrirC()
+        {
+            if (btnCell == null)
+            {
+                btnCell = new Button();
+                btnCell.Text = "Abrir Celular";
+                btnCell.BackColor = Color.White;
+                btnCell.FlatStyle = FlatStyle.Flat;
+                btnCell.FlatAppearance.BorderSize = 0;
+                btnCell.MouseEnter += btnCell_MouseEnter;
+                tamanhoBtnCell();
+                this.Resize += (s, e) => tamanhoBtnCell();
+            }
+        }
+        void tamanhoBtnCell()
+        {
+            btnCell.Size = new Size(this.ClientSize.Width / 4, this.ClientSize.Height / 4);
+            btnCell.Location = new Point(
+                (this.ClientSize.Width / 2),
+                (this.ClientSize.Height / 2)
+                );
+                
+        }
+            PictureBox pcelular;
+
+        void abrirCelular()
+        {
+            if (pcelular == null)
+            {
+                pcelular = new PictureBox();
+
+                pcelular.Image = Properties.Resources.celular;
+                pcelular.BackColor = Color.Transparent;
+                pcelular.SizeMode = PictureBoxSizeMode.StretchImage;
+                tamanhoCelular();
+
+                this.Controls.Add(pcelular);
+                timerC.Start();
+                this.Resize += (s, e) => tamanhoCelular();
+            }
+
+        }
+        void tamanhoCelular()
+        {
+            pcelular.Size = new Size
+                (
+                this.ClientSize.Width / 2,
+                (int)((this.ClientSize.Height / 2) * 1.77)
+                );
+            pcelular.Location = new Point(
+                (this.ClientSize.Width - pcelular.Width),
+                (this.ClientSize.Height - pcelular.Height)
+                );
+
+        }
+        void fecharCelular()
+        {
+            if (pcelular != null)
+            {
+                this.Controls.Remove(pcelular);
+                pcelular.Dispose();
+                pcelular = null;
+            }
+        }
+        async Task transicaoCelular()
+        {
+            direcao = 3;
+            desabilitarBotoes();
+            criarTransicao();
+            transicao.Image = Properties.Resources.ltoc;
+            this.Controls.Add(transicao);
+            await Task.Delay(1000);
+            this.Controls.Remove(transicao);
+            transicao.Dispose();
+            transicao = null;
         }
         async Task transicaoLousa()
         {
@@ -132,6 +280,19 @@ namespace five_naites_ati_freires
             transicao = null;
             direcao = 0;
         }
+        async Task transicaoLousa3()
+        {
+
+            desabilitarBotoes();
+            criarTransicao();
+            transicao.Image = Properties.Resources.ctol;
+            this.Controls.Add(transicao);
+            await Task.Delay(1000);
+            this.Controls.Remove(transicao);
+            transicao.Dispose();
+            transicao = null;
+            direcao = 0;
+        }
         async Task transicaoPorta()
         {
 
@@ -148,9 +309,10 @@ namespace five_naites_ati_freires
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.ClientSize = new Size(1366, 768);
             criarbtnD();
             criarbtnE();
-                
+            criarbtnB();
         }
         private async void btnMoverD_MouseEnter(object sender, EventArgs e)
         {
@@ -169,6 +331,44 @@ namespace five_naites_ati_freires
                     this.BackgroundImageLayout = ImageLayout.Stretch;
                     criarbtnE();
                     criarbtnD();
+                    criarbtnB();
+                    break;
+                default:
+                    break;
+            }
+
+        }
+        private async void btnMoverB_MouseEnter(object sender, EventArgs e)
+        {
+            desabilitarBotoes();
+            switch (direcao)
+            {
+                case 0:
+                    await transicaoCelular();
+                    this.BackgroundImage = Properties.Resources.czoom;
+                    this.BackgroundImageLayout = ImageLayout.Stretch;
+                    criarbtnAbrirC();
+                    criarbtnC();
+                    break;
+                default:
+                    break;
+            }
+
+        }
+        private async void btnMoverC_MouseEnter(object sender, EventArgs e)
+        {
+            desabilitarBotoes();
+            switch (direcao)
+            {
+                case 3:
+                    desabilitarBotoes();
+                    fecharCelular();
+                    await transicaoLousa3();
+                    this.BackgroundImage = Properties.Resources.fv2;
+                    this.BackgroundImageLayout = ImageLayout.Stretch;
+                    criarbtnD();
+                    criarbtnE();
+                    criarbtnB();
                     break;
                 default:
                     break;
@@ -192,6 +392,19 @@ namespace five_naites_ati_freires
                     this.BackgroundImageLayout = ImageLayout.Stretch;
                     criarbtnD();
                     criarbtnE();
+                    criarbtnB();
+                    break;
+                default:
+                    break;
+            }
+        }
+        private async void btnCell_MouseEnter(object sender, EventArgs e)
+        {
+            desabilitarBotoes();
+            switch (direcao)
+            {
+                case 3:
+                    abrirCelular();
                     break;
                 default:
                     break;
@@ -203,7 +416,7 @@ namespace five_naites_ati_freires
         {
             tempo++;
             lblContador.Text = "Timer: " + tempo;
-            if (tempo == 10)
+            if (tempo == 300)
             {
                 gameover();
 

@@ -31,6 +31,9 @@
             components = new System.ComponentModel.Container();
             timerGeral = new System.Windows.Forms.Timer(components);
             lblContador = new Label();
+            timerC = new System.Windows.Forms.Timer(components);
+            lblRespostas = new Label();
+            lblC = new Label();
             SuspendLayout();
             // 
             // timerGeral
@@ -47,6 +50,29 @@
             lblContador.TabIndex = 1;
             lblContador.Text = "Timer: ";
             // 
+            // timerC
+            // 
+            timerC.Interval = 1000;
+            timerC.Tick += timerC_Tick;
+            // 
+            // lblRespostas
+            // 
+            lblRespostas.AutoSize = true;
+            lblRespostas.Location = new Point(49, 60);
+            lblRespostas.Name = "lblRespostas";
+            lblRespostas.Size = new Size(70, 15);
+            lblRespostas.TabIndex = 2;
+            lblRespostas.Text = "nr respostas";
+            // 
+            // lblC
+            // 
+            lblC.AutoSize = true;
+            lblC.Location = new Point(49, 84);
+            lblC.Name = "lblC";
+            lblC.Size = new Size(73, 15);
+            lblC.TabIndex = 3;
+            lblC.Text = "celular timer";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -54,6 +80,8 @@
             BackgroundImage = Properties.Resources.fv2;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblC);
+            Controls.Add(lblRespostas);
             Controls.Add(lblContador);
             DoubleBuffered = true;
             Name = "Form1";
@@ -66,5 +94,8 @@
         #endregion
         private Label lblContador;
         private System.Windows.Forms.Timer timerGeral;
+        private System.Windows.Forms.Timer timerC;
+        private Label lblRespostas;
+        private Label lblC;
     }
 }

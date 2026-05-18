@@ -73,6 +73,36 @@ namespace five_naites_ati_freires.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ctol {
+            get {
+                object obj = ResourceManager.GetObject("ctol", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cv1 {
+            get {
+                object obj = ResourceManager.GetObject("cv1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap czoom {
+            get {
+                object obj = ResourceManager.GetObject("czoom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dtol {
             get {
                 object obj = ResourceManager.GetObject("dtol", resourceCulture);
@@ -136,6 +166,16 @@ namespace five_naites_ati_freires.Properties {
         internal static System.Drawing.Bitmap janela {
             get {
                 object obj = ResourceManager.GetObject("janela", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ltoc {
+            get {
+                object obj = ResourceManager.GetObject("ltoc", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
