@@ -26,6 +26,7 @@ namespace five_naites_ati_freires
         Button btnMoverC;
         Button btnCell;
         PictureBox transicao;
+        
 
         
         private void timerC_Tick(object sender, EventArgs e)
@@ -174,6 +175,7 @@ namespace five_naites_ati_freires
                 btnCell = new Button();
                 btnCell.BackColor = Color.White;
                 btnCell.FlatStyle = FlatStyle.Flat;
+                btnCell.Cursor = Cursors.Hand;
                 btnCell.FlatAppearance.BorderSize = 0;
                 btnCell.MouseClick += btnCell_MouseEnter;
                 if (celular == 0)
@@ -221,18 +223,36 @@ namespace five_naites_ati_freires
             }
         }
 
+        PictureBox prova;
+        void abrirProva()
+        {
+            if (prova == null)
+            {
+                prova = new PictureBox();
+                prova.Image = Properties.Resources.celular;
+                prova.BackColor = Color.Transparent;
+                prova.SizeMode = PictureBoxSizeMode.StretchImage;
+                tamanhoCelular();
+                this.Controls.Add(prova);
+                this.Resize += (s, e) => tamanhoCelular();
+            }
+        }
+
         void tamanhoCelular()
         {
-            pcelular.Size = new Size
-                (
-                this.ClientSize.Width / 2,
-                (int)((this.ClientSize.Height / 2) * 1.77)
-                );
-            pcelular.Location = new Point(
-                (this.ClientSize.Width - pcelular.Width),
-                (this.ClientSize.Height - pcelular.Height)
-                );
+            if (pcelular != null)
+            {
+                pcelular.Size = new Size
+                    (
+                    this.ClientSize.Width / 2,
+                    (int)((this.ClientSize.Height / 2) * 1.77)
+                    );
+                pcelular.Location = new Point(
+                    (this.ClientSize.Width - pcelular.Width),
+                    (this.ClientSize.Height - pcelular.Height)
+                    );
 
+            }
         }
         void fecharCelular()
         {
