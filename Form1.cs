@@ -25,6 +25,7 @@ namespace five_naites_ati_freires
         Button btnMoverB;
         Button btnMoverC;
         Button btnCell;
+        Button btnProva;
         PictureBox transicao;
         
 
@@ -92,6 +93,12 @@ namespace five_naites_ati_freires
                 btnCell.Dispose();
                 btnCell = null;
             }
+            if (btnProva != null)
+            { 
+                this.Controls.Remove (btnProva);
+                btnProva.Dispose();
+                btnProva = null;
+            }
         }
         void criarTransicao()
         {
@@ -106,7 +113,7 @@ namespace five_naites_ati_freires
             {
                 btnMoverE = new Button();
                 btnMoverE.Text = " ";
-                btnMoverE.BackColor = Color.Transparent;
+                btnMoverE.BackColor = Color.White;
                 btnMoverE.FlatStyle = FlatStyle.Flat;
                 btnMoverE.FlatAppearance.BorderSize = 0;
                 btnMoverE.MouseEnter += btnMoverE_MouseEnter;
@@ -194,18 +201,53 @@ namespace five_naites_ati_freires
 
 
         }
+
+        void criarbtnAbrirP()
+        {
+            if (btnProva == null)
+            {
+                btnProva = new Button();
+                btnProva.BackColor = Color.White;
+                btnProva.FlatStyle = FlatStyle.Flat;
+                btnProva.Cursor = Cursors.Hand;
+                btnProva.FlatAppearance.BorderSize = 0;
+                btnProva.MouseClick += btnProva_MouseEnter;
+                btnProva.Text = "Abrir Prova";
+               
+                tamanhoBtnProva();
+                this.Resize += (s, e) => tamanhoBtnProva();
+                this.Controls.Add(btnProva);
+            }
+        }
+
         void tamanhoBtnCell()
         {
 
             if (btnCell != null) {
-                btnCell.Size = new Size(this.ClientSize.Width / 4, this.ClientSize.Height / 4);
+                btnCell.Size = new Size(this.ClientSize.Width, this.ClientSize.Height / 8);
                 btnCell.Location = new Point(
-                    (this.ClientSize.Width / 2),
-                    (this.ClientSize.Height / 2)
+                    (0),
+                    (this.ClientSize.Height - btnCell.Height)
                     );
             }
 
         }
+
+        void tamanhoBtnProva()
+        {
+
+            if (btnProva != null)
+            {
+                btnProva.Size = new Size(this.ClientSize.Width / 2, this.ClientSize.Height / 2);
+                btnProva.Location = new Point(
+                    (this.ClientSize.Width / 2 - (btnProva.Width/2)),
+                    (this.ClientSize.Height / 2 - (btnProva.Height/2))
+                    );
+            }
+
+        }
+
+
         PictureBox pcelular;
 
         void abrirCelular()
@@ -223,21 +265,6 @@ namespace five_naites_ati_freires
             }
         }
 
-        PictureBox prova;
-        void abrirProva()
-        {
-            if (prova == null)
-            {
-                prova = new PictureBox();
-                prova.Image = Properties.Resources.celular;
-                prova.BackColor = Color.Transparent;
-                prova.SizeMode = PictureBoxSizeMode.StretchImage;
-                tamanhoCelular();
-                this.Controls.Add(prova);
-                this.Resize += (s, e) => tamanhoCelular();
-            }
-        }
-
         void tamanhoCelular()
         {
             if (pcelular != null)
@@ -250,6 +277,40 @@ namespace five_naites_ati_freires
                 pcelular.Location = new Point(
                     (this.ClientSize.Width - pcelular.Width),
                     (this.ClientSize.Height - pcelular.Height)
+                    );
+
+            }
+        }
+
+        PictureBox prova;
+        void abrirProva()
+        {
+            if (prova == null)
+            {
+                prova = new PictureBox();
+                prova.Image = Properties.Resources.prova;
+                prova.BackColor = Color.Transparent;
+                prova.SizeMode = PictureBoxSizeMode.StretchImage;
+                tamanhoProva();
+                this.Controls.Add(prova);
+                this.Resize += (s, e) => tamanhoProva();
+            }
+        }
+
+
+
+        void tamanhoProva()
+        {
+            if (prova != null)
+            {
+                prova.Size = new Size
+                    (
+                    this.ClientSize.Width / 2,
+                    (this.ClientSize.Height / 2) 
+                    );
+                prova.Location = new Point(
+                    (this.ClientSize.Width / 2 - (btnProva.Width / 2)),
+                    (this.ClientSize.Height / 2 - (btnProva.Height / 2))
                     );
 
             }
@@ -401,6 +462,7 @@ namespace five_naites_ati_freires
                     this.BackgroundImageLayout = ImageLayout.Stretch;
                     criarbtnAbrirC();
                     criarbtnC();
+                    criarbtnAbrirP();
                     if (celular == 1)
                     { 
                         abrirCelular();
@@ -473,6 +535,13 @@ namespace five_naites_ati_freires
                 lblteste.Text = "teste: " + celular;
                 return;
             }
+        }
+
+        private async void btnProva_MouseEnter(object sender, EventArgs e)
+        {
+            abrirProva();
+            desabilitarBotoes();
+            return;
         }
 
 
