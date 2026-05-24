@@ -25,6 +25,7 @@ namespace five_naites_ati_freires
         Button btnMoverB;
         Button btnMoverC;
         Button btnCell;
+        Button btnProva;
         PictureBox transicao;
         
 
@@ -190,21 +191,17 @@ namespace five_naites_ati_freires
                 this.Resize += (s, e) => tamanhoBtnCell();
                 this.Controls.Add(btnCell);
             }
-
-
-
         }
         void tamanhoBtnCell()
         {
 
             if (btnCell != null) {
-                btnCell.Size = new Size(this.ClientSize.Width / 4, this.ClientSize.Height / 4);
+                btnCell.Size = new Size(this.ClientSize.Width, this.ClientSize.Height / 8);
                 btnCell.Location = new Point(
-                    (this.ClientSize.Width / 2),
-                    (this.ClientSize.Height / 2)
+                    (0),
+                    (this.ClientSize.Height - btnCell.Height)
                     );
             }
-
         }
         PictureBox pcelular;
 
@@ -220,6 +217,22 @@ namespace five_naites_ati_freires
                 this.Controls.Add(pcelular);
                 timerC.Start();
                 this.Resize += (s, e) => tamanhoCelular();
+            }
+        }
+        void tamanhoCelular()
+        {
+            if (pcelular != null)
+            {
+                pcelular.Size = new Size
+                    (
+                    this.ClientSize.Width / 2,
+                    (int)((this.ClientSize.Height / 2) * 1.77)
+                    );
+                pcelular.Location = new Point(
+                    (this.ClientSize.Width - pcelular.Width),
+                    (this.ClientSize.Height - pcelular.Height)
+                    );
+
             }
         }
 
@@ -238,20 +251,47 @@ namespace five_naites_ati_freires
             }
         }
 
-        void tamanhoCelular()
+        void tamanhoProva()
         {
-            if (pcelular != null)
+            if (prova != null)
             {
-                pcelular.Size = new Size
-                    (
-                    this.ClientSize.Width / 2,
-                    (int)((this.ClientSize.Height / 2) * 1.77)
-                    );
-                pcelular.Location = new Point(
-                    (this.ClientSize.Width - pcelular.Width),
-                    (this.ClientSize.Height - pcelular.Height)
-                    );
+                prova.Size = new Size
+                (
+                       this.ClientSize.Width / 2,
+                       (int)((this.ClientSize.Height / 2) * 1.77)
+                );
+                prova.Location = new Point(
+                      (this.ClientSize.Width /2 - prova.Width),
+                      (this.ClientSize.Height - prova.Height)
+                );
 
+            }
+        }
+        void criarbtnAbrirP()
+        {
+            if (btnProva == null)
+            {
+                btnProva = new Button();
+                btnProva.BackColor = Color.White;
+                btnProva.FlatStyle = FlatStyle.Flat;
+                btnProva.Cursor = Cursors.Hand;
+                btnProva.FlatAppearance.BorderSize = 0;
+                btnProva.MouseClick += BtnProva_MouseEnter;
+                tamanhoBtnProva();
+                this.Resize += (s, e) => tamanhoBtnProva();
+                this.Controls.Add(btnProva);
+            }
+        }
+        void tamanhoBtnProva()
+        {
+
+            if (btnProva != null)
+            {
+                btnProva.Size = new Size(this.ClientSize.Width, this.ClientSize.Height / 8);
+                btnProva.Location = new Point(
+                    (0),
+                    (this.ClientSize.Height - btnProva.Height)
+                    );
             }
         }
         void fecharCelular()
@@ -474,7 +514,10 @@ namespace five_naites_ati_freires
                 return;
             }
         }
-
+        private async void BtnProva_MouseEnter(object sender, EventArgs e)
+        {
+            abrirProva();
+        }
 
         private void timerProva_tick(object sender, EventArgs e)
         {
