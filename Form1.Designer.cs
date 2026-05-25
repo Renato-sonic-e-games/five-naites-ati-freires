@@ -36,6 +36,7 @@
             lblC = new Label();
             lblteste = new Label();
             lbldirecao = new Label();
+            timerPopup = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // timerGeral
@@ -48,7 +49,7 @@
             lblContador.AutoSize = true;
             lblContador.Location = new Point(49, 35);
             lblContador.Name = "lblContador";
-            lblContador.Size = new Size(43, 15);
+            lblContador.Size = new Size(44, 15);
             lblContador.TabIndex = 1;
             lblContador.Text = "Timer: ";
             // 
@@ -93,11 +94,16 @@
             lbldirecao.TabIndex = 5;
             lbldirecao.Text = "direcao: ";
             // 
+            // timerPopup
+            // 
+            timerPopup.Interval = 20;
+            timerPopup.Tick += timerPopup_Tick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.fv2;
+            BackgroundImage = Properties.Resources.fv4;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(lbldirecao);
@@ -121,6 +127,7 @@
         private Label lblC;
         private Label lblteste;
         private Label lbldirecao;
+        private System.Windows.Forms.Timer timerPopup;
     }
 }
 
