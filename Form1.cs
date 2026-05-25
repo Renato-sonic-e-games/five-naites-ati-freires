@@ -46,9 +46,9 @@ namespace five_naites_ati_freires
         {
             centroY = this.ClientSize.Height / 2 - (prova.Height / 2);
             contadorPopup++;
-            if (prova.Top >= centroY)
+            if (prova.Top > centroY)
             {
-                prova.Top -= 40;
+                prova.Top -= centroY/2;
                 aProva = prova.Top;
             }
             else
@@ -290,7 +290,6 @@ namespace five_naites_ati_freires
             transicao.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
-
         PictureBox pcelular;
 
         void abrirCelular()
@@ -327,6 +326,7 @@ namespace five_naites_ati_freires
         PictureBox prova;
         void abrirProva()
         {
+            
             if (prova == null)
             {
                 prova = new PictureBox();
@@ -335,8 +335,11 @@ namespace five_naites_ati_freires
                 prova.SizeMode = PictureBoxSizeMode.StretchImage;
                 tamanhoProva();
                 this.Controls.Add(prova);
-                prova.BringToFront();
             }
+            aProva = this.ClientSize.Height;
+            tamanhoProva();
+            prova.Visible = true;
+            prova.BringToFront();
         }
         void fecharProva()
         {
