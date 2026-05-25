@@ -37,6 +37,7 @@
             lblteste = new Label();
             lbldirecao = new Label();
             timerPopup = new System.Windows.Forms.Timer(components);
+            btnJogar = new Button();
             SuspendLayout();
             // 
             // timerGeral
@@ -49,7 +50,7 @@
             lblContador.AutoSize = true;
             lblContador.Location = new Point(49, 35);
             lblContador.Name = "lblContador";
-            lblContador.Size = new Size(44, 15);
+            lblContador.Size = new Size(43, 15);
             lblContador.TabIndex = 1;
             lblContador.Text = "Timer: ";
             // 
@@ -99,13 +100,32 @@
             timerPopup.Interval = 20;
             timerPopup.Tick += timerPopup_Tick;
             // 
+            // btnJogar
+            // 
+            btnJogar.Anchor = AnchorStyles.None;
+            btnJogar.BackColor = Color.Transparent;
+            btnJogar.BackgroundImage = Properties.Resources.BotãoJogar;
+            btnJogar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnJogar.FlatAppearance.BorderSize = 0;
+            btnJogar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnJogar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnJogar.FlatStyle = FlatStyle.Flat;
+            btnJogar.Location = new Point(331, 176);
+            btnJogar.Name = "btnJogar";
+            btnJogar.Size = new Size(130, 60);
+            btnJogar.TabIndex = 6;
+            btnJogar.UseVisualStyleBackColor = false;
+            btnJogar.Click += btnJogar_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.fv4;
+            BackColor = SystemColors.Control;
+            BackgroundImage = Properties.Resources.FNAFTitleScreen;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnJogar);
             Controls.Add(lbldirecao);
             Controls.Add(lblteste);
             Controls.Add(lblC);
@@ -115,6 +135,7 @@
             Name = "Form1";
             Text = "FNAFreire";
             Load += Form1_Load;
+            KeyDown += Form1_KeyDown;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -128,6 +149,7 @@
         private Label lblteste;
         private Label lbldirecao;
         private System.Windows.Forms.Timer timerPopup;
+        private Button btnJogar;
     }
 }
 

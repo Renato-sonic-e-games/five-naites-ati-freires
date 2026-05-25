@@ -1,3 +1,5 @@
+using five_naites_ati_freires.Properties;
+
 namespace five_naites_ati_freires
 {
     public partial class Form1 : Form
@@ -5,8 +7,6 @@ namespace five_naites_ati_freires
         public Form1()
         {
             InitializeComponent();
-            timerGeral.Start();
-            this.DoubleBuffered = true;
         }
 
         int tempo = 0;
@@ -29,31 +29,34 @@ namespace five_naites_ati_freires
         Button btnProva;
         PictureBox transicao;
         PictureBox telaPreta;
-        int contadorPopup = 0;
         int centroY = 0;
         int aProva = 0;
         int opacidade = 0;
 
         private void Form1_Resize(object sender, EventArgs e)
         {
+            if (direcao == -1)
+            {
+                tamanhoBtnMenu();
+            }
             tamanhoBtnCell();
             tamanhoBtnProva();
             tamanhoCelular();
             tamanhoProva();
             tamanhoTransicao();
+            tamanhoBtnC();
         }
         private void timerPopup_Tick(object sender, EventArgs e)
         {
             centroY = this.ClientSize.Height / 2 - (prova.Height / 2);
-            contadorPopup++;
             if (prova.Top > centroY)
             {
-                prova.Top -= centroY/2;
+                prova.Top -= centroY / 2;
                 aProva = prova.Top;
             }
             else
-            { 
-            prova.Top = centroY;
+            {
+                prova.Top = centroY;
             }
             if (opacidade < 150)
             {
@@ -116,6 +119,22 @@ namespace five_naites_ati_freires
             if (btnProva != null)
                 btnProva.Visible = false;
         }
+        void desabilitarLabels()
+        {
+            lblC.Visible = false;
+            lblContador.Visible = false;
+            lbldirecao.Visible = false;
+            lblRespostas.Visible = false;
+            lblteste.Visible = false;
+        }
+        void habilitarLabels()
+        {
+            lblC.Visible = true;
+            lblContador.Visible = true;
+            lbldirecao.Visible = true;
+            lblRespostas.Visible = true;
+            lblteste.Visible = true;
+        }
         void criarTelaPreta()
         {
             opacidade = 0;
@@ -123,20 +142,22 @@ namespace five_naites_ati_freires
             telaPreta.Width = this.ClientSize.Width;
             telaPreta.Height = this.ClientSize.Height;
             telaPreta.BackColor = Color.FromArgb(opacidade, 0, 0, 0);
-            telaPreta.MouseClick += (s, e) => 
-            {   fecharProva();
+            telaPreta.MouseClick += (s, e) =>
+            {
+                fecharProva();
                 telaPreta.Visible = false;
             };
             this.Controls.Add(telaPreta);
         }
         void criarTransicao()
         {
-            if(transicao == null) { 
-            transicao = new PictureBox();
-            transicao.Width = this.ClientSize.Width;
-            transicao.Height = this.ClientSize.Height;
-            transicao.SizeMode = PictureBoxSizeMode.StretchImage;
-            this.Controls.Add(transicao);
+            if (transicao == null)
+            {
+                transicao = new PictureBox();
+                transicao.Width = this.ClientSize.Width;
+                transicao.Height = this.ClientSize.Height;
+                transicao.SizeMode = PictureBoxSizeMode.StretchImage;
+                this.Controls.Add(transicao);
             }
             transicao.Visible = true;
         }
@@ -205,12 +226,18 @@ namespace five_naites_ati_freires
                 btnMoverC.FlatStyle = FlatStyle.Flat;
                 btnMoverC.FlatAppearance.BorderSize = 0;
                 btnMoverC.MouseEnter += btnMoverC_MouseEnter;
-                btnMoverC.Size = new Size(this.ClientSize.Width, this.ClientSize.Height / 8);
-                btnMoverC.Location = new Point(0, 0);
-                btnMoverC.Anchor = (AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Bottom);
+                tamanhoBtnC();
                 this.Controls.Add(btnMoverC);
             }
             btnMoverC.Visible = true;
+        }
+        void tamanhoBtnC()
+        {
+            if(btnMoverC != null)
+            { 
+            btnMoverC.Size = new Size(this.ClientSize.Width, this.ClientSize.Height / 8);
+            btnMoverC.Location = new Point(0, 0);
+            }
         }
         void criarbtnAbrirC()
         {
@@ -281,13 +308,24 @@ namespace five_naites_ati_freires
             }
 
         }
+        void tamanhoBtnMenu()
+        { 
+            btnJogar.Size = new Size
+                ((this.ClientSize.Width*130)/816,
+                (this.ClientSize.Height * 60) / 489
+                );
+            btnJogar.Location = new Point(
+                (this.ClientSize.Width*331)/816,
+                (this.ClientSize.Height *176)/489
+                );
+        }
         void tamanhoTransicao()
         {
-            if(transicao != null)
-            { 
-            transicao.Width = this.ClientSize.Width;
-            transicao.Height = this.ClientSize.Height;
-            transicao.SizeMode = PictureBoxSizeMode.StretchImage;
+            if (transicao != null)
+            {
+                transicao.Width = this.ClientSize.Width;
+                transicao.Height = this.ClientSize.Height;
+                transicao.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
         PictureBox pcelular;
@@ -326,7 +364,6 @@ namespace five_naites_ati_freires
         PictureBox prova;
         void abrirProva()
         {
-            
             if (prova == null)
             {
                 prova = new PictureBox();
@@ -455,12 +492,20 @@ namespace five_naites_ati_freires
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            direcao = -1;
             this.Resize += Form1_Resize;
             this.ClientSize = new Size(1366, 768);
+            desabilitarLabels();
+        }
+        void iniciarJogo()
+        {
+            timerGeral.Start();
+            direcao = 0;
+            habilitarLabels();
+            this.BackgroundImage = Resources.fv4;
             criarbtnD();
             criarbtnE();
             criarbtnB();
-
         }
         private async void btnMoverD_MouseEnter(object sender, EventArgs e)
         {
@@ -574,7 +619,6 @@ namespace five_naites_ati_freires
 
         private async void btnProva_MouseEnter(object sender, EventArgs e)
         {
-            contadorPopup = 0;
             criarTelaPreta();
             abrirProva();
             timerPopup.Start();
@@ -594,6 +638,18 @@ namespace five_naites_ati_freires
             }
         }
 
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.E)
+            {
+            }
+        }
+
+        private void btnJogar_Click(object sender, EventArgs e)
+        {
+            iniciarJogo();
+            btnJogar.Visible = false;
+        }
     }
 }
 
