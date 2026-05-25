@@ -1,6 +1,6 @@
 ﻿namespace five_naites_ati_freires
 {
-    partial class Form1
+    partial class telaJogo
     {
         /// <summary>
         ///  Required designer variable.
@@ -116,8 +116,10 @@
             btnJogar.TabIndex = 6;
             btnJogar.UseVisualStyleBackColor = false;
             btnJogar.Click += btnJogar_Click;
+            btnJogar.MouseEnter += btnJogar_MouseEnter;
+            btnJogar.MouseLeave += btnJogar_MouseLeave;
             // 
-            // Form1
+            // telaJogo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -132,7 +134,7 @@
             Controls.Add(lblRespostas);
             Controls.Add(lblContador);
             DoubleBuffered = true;
-            Name = "Form1";
+            Name = "telaJogo";
             Text = "FNAFreire";
             Load += Form1_Load;
             KeyDown += Form1_KeyDown;

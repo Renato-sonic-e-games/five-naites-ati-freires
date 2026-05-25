@@ -124,6 +124,9 @@
   <data name="transitiontest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\transitiontest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BotãoJogar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotãoJogar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="fv1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fv1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,6 +151,9 @@
   <data name="ctol2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ctol22.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="portaZoomAberta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\portaZoomAberta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="fv4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fv4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -156,9 +162,6 @@
   </data>
   <data name="ltod" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ltod.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="transitiontest-ezgif.com-reverse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\transitiontest-ezgif.com-reverse.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="transitiontest1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\transitiontest1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,8 +217,8 @@
   <data name="ltow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ltow.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="portaZoomAberta" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\portaZoomAberta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="transitiontest-ezgif.com-reverse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transitiontest-ezgif.com-reverse.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="paredeJanelaZoom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paredeJanelaZoom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,7 +226,7 @@
   <data name="FNAFTitleScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FNAFTitleScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BotãoJogar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BotãoJogar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BotãoJogarSelecionado2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotãoJogarSelecionado2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

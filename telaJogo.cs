@@ -2,9 +2,9 @@ using five_naites_ati_freires.Properties;
 
 namespace five_naites_ati_freires
 {
-    public partial class Form1 : Form
+    public partial class telaJogo : Form
     {
-        public Form1()
+        public telaJogo()
         {
             InitializeComponent();
         }
@@ -233,10 +233,10 @@ namespace five_naites_ati_freires
         }
         void tamanhoBtnC()
         {
-            if(btnMoverC != null)
-            { 
-            btnMoverC.Size = new Size(this.ClientSize.Width, this.ClientSize.Height / 8);
-            btnMoverC.Location = new Point(0, 0);
+            if (btnMoverC != null)
+            {
+                btnMoverC.Size = new Size(this.ClientSize.Width, this.ClientSize.Height / 8);
+                btnMoverC.Location = new Point(0, 0);
             }
         }
         void criarbtnAbrirC()
@@ -309,14 +309,14 @@ namespace five_naites_ati_freires
 
         }
         void tamanhoBtnMenu()
-        { 
+        {
             btnJogar.Size = new Size
-                ((this.ClientSize.Width*130)/816,
+                ((this.ClientSize.Width * 130) / 816,
                 (this.ClientSize.Height * 60) / 489
                 );
             btnJogar.Location = new Point(
-                (this.ClientSize.Width*331)/816,
-                (this.ClientSize.Height *176)/489
+                (this.ClientSize.Width * 331) / 816,
+                (this.ClientSize.Height * 195) / 489
                 );
         }
         void tamanhoTransicao()
@@ -649,6 +649,16 @@ namespace five_naites_ati_freires
         {
             iniciarJogo();
             btnJogar.Visible = false;
+        }
+
+        private void btnJogar_MouseEnter(object sender, EventArgs e)
+        {
+            this.btnJogar.BackgroundImage = Resources.BotãoJogarSelecionado2;
+        }
+
+        private void btnJogar_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnJogar.BackgroundImage = Resources.BotãoJogar;
         }
     }
 }
