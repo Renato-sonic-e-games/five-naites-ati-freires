@@ -333,6 +333,16 @@ namespace five_naites_ati_freires.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap transicaoCelular {
+            get {
+                object obj = ResourceManager.GetObject("transicaoCelular", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap transitiontest {
             get {
                 object obj = ResourceManager.GetObject("transitiontest", resourceCulture);

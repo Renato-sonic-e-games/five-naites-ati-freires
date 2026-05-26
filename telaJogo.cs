@@ -343,6 +343,25 @@ namespace five_naites_ati_freires
                 timerC.Start();
             }
         }
+        PictureBox transicaoCel;
+        void TransicaoCell()
+        {
+            if (transicaoCel == null)
+            {
+                transicaoCel = new PictureBox();
+                transicaoCel.Image = Properties.Resources.transicaoCelular;
+                transicaoCel.BackColor = Color.Transparent;
+                transicaoCel.SizeMode = PictureBoxSizeMode.StretchImage;
+                tamanhoCelular();
+                this.Controls.Add(transicaoCel);
+            }
+            else
+            {
+                transicaoCel.Image.Dispose();
+                transicaoCel.Image = Properties.Resources.transicaoCelular;
+            }
+            transicaoCel.Visible = true;
+        }
 
         void tamanhoCelular()
         {
@@ -356,6 +375,19 @@ namespace five_naites_ati_freires
                 pcelular.Location = new Point(
                     (this.ClientSize.Width - pcelular.Width),
                     (this.ClientSize.Height - pcelular.Height)
+                    );
+
+            }
+            if (transicaoCel != null)
+            {
+                transicaoCel.Size = new Size
+                    (
+                    this.ClientSize.Width / 2,
+                    (int)((this.ClientSize.Height / 2) * 1.77)
+                    );
+                transicaoCel.Location = new Point(
+                    (this.ClientSize.Width - transicaoCel.Width),
+                    (this.ClientSize.Height - transicaoCel.Height)
                     );
 
             }
@@ -609,6 +641,9 @@ namespace five_naites_ati_freires
             }
             if (celular == 0)
             {
+                TransicaoCell();
+                await Task.Delay(450);
+                transicaoCel.Visible = false;
                 abrirCelular();
                 btnCell.Text = "Fechar celular";
                 celular = 1;
