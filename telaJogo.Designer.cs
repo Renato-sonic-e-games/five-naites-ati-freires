@@ -38,6 +38,7 @@
             lbldirecao = new Label();
             timerPopup = new System.Windows.Forms.Timer(components);
             btnJogar = new Button();
+            timerFreirezada = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // timerGeral
@@ -134,8 +135,11 @@
             Controls.Add(lblRespostas);
             Controls.Add(lblContador);
             DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "telaJogo";
             Text = "FNAFreire";
+            TopMost = true;
+            WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
             KeyDown += Form1_KeyDown;
             ResumeLayout(false);
@@ -152,6 +156,7 @@
         private Label lbldirecao;
         private System.Windows.Forms.Timer timerPopup;
         private Button btnJogar;
+        private System.Windows.Forms.Timer timerFreirezada;
     }
 }
 

@@ -2,6 +2,8 @@ using five_naites_ati_freires.Properties;
 
 namespace five_naites_ati_freires
 {
+
+
     public partial class telaJogo : Form
     {
         public telaJogo()
@@ -694,6 +696,15 @@ namespace five_naites_ati_freires
         private void btnJogar_MouseLeave(object sender, EventArgs e)
         {
             this.btnJogar.BackgroundImage = Resources.BotãoJogar;
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                this.Close();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }
