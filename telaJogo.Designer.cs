@@ -41,6 +41,7 @@
             btnJogar = new Button();
             timerFreirezada = new System.Windows.Forms.Timer(components);
             lblFreirep = new Label();
+            progressBar1 = new ProgressBar();
             SuspendLayout();
             // 
             // timerGeral
@@ -137,6 +138,13 @@
             lblFreirep.TabIndex = 7;
             lblFreirep.Text = "FreirePosition: ";
             // 
+            // progressBar1
+            // 
+            progressBar1.Location = new Point(1127, -1);
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(238, 23);
+            progressBar1.TabIndex = 8;
+            // 
             // telaJogo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -145,6 +153,7 @@
             BackgroundImage = Properties.Resources.FNAFTitleScreen;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1366, 768);
+            Controls.Add(progressBar1);
             Controls.Add(lblFreirep);
             Controls.Add(btnJogar);
             Controls.Add(lbldirecao);
@@ -177,6 +186,7 @@
         private Button btnJogar;
         private System.Windows.Forms.Timer timerFreirezada;
         private Label lblFreirep;
+        private ProgressBar progressBar1;
     }
 }
 
