@@ -80,10 +80,13 @@ namespace five_naites_ati_freires
             timerC.Stop();
             timerFreirezada.Stop();
             timerPopup.Stop();
-            await Task.Delay(2100);
-            this.BackgroundImage = Properties.Resources.gameOverFull;
-            jumpscare.Visible = false;
             musicaPlayer.Stop();
+            await Task.Delay(2000);
+            jumpscare.Visible = false;
+            this.BackgroundImage = null;
+            this.BackColor = Color.Black;
+            await Task.Delay(2500);
+            this.BackgroundImage = Properties.Resources.gameOverFull;
             TrocarMusica("musgas/over.m4a");
         }
 
@@ -207,6 +210,8 @@ namespace five_naites_ati_freires
                                 posicaoFreire = 3;
                             break;
                         case 3:
+                            if(direcao != 3)
+                            await Blecaute();
                             if (moverFreire == 1)
                             {
                                 posicaoFreire = 1;
@@ -219,10 +224,31 @@ namespace five_naites_ati_freires
                     }
                 }
                 verificarFreire();
-                lblFreirep.Text = "lvl agressividade freire: " + lvlAgressividadeFreire + " | \r\n posicao freire: " + posicaoFreire + " | \r\n freire agressividade: " + agressividadeFreire;
+              //  lblFreirep.Text = "lvl agressividade freire: " + lvlAgressividadeFreire + " | \r\n posicao freire: " + posicaoFreire + " | \r\n freire agressividade: " + agressividadeFreire;
             }
         }
-        void verificarFreire()
+        Panel telaP;
+        async Task Blecaute()
+        {
+            if (morreu)
+                return;
+            if (telaP == null)
+            {
+                telaP = new Panel();
+                telaP.Size = this.ClientSize;
+                telaP.Location = new Point(0, 0);
+                this.Controls.Add(telaP);
+                telaP.BackColor = Color.Black;
+
+            }
+            telaP.BringToFront();
+            telaP.Visible = true;
+
+            await Task.Delay(450);
+
+            telaP.Visible = false;
+        }
+        async Task verificarFreire()
         {
             sala = Properties.Resources.fv4;
             portaaberta = Properties.Resources.portaZoomAberta;
@@ -234,13 +260,16 @@ namespace five_naites_ati_freires
                     {
                         gameover();
                     }
+                    if (direcao != 3)
+                        await Blecaute();
                     sala = Properties.Resources.fv5_freire_;
                     break;
 
                 case 2:
                     if (direcao == 1)
                     {
-                        criarPFcorreno();
+                        await criarPFcorreno();
+                        posicaoFreire = 3;
                     }
                     break;
                 case 1:
@@ -294,7 +323,9 @@ namespace five_naites_ati_freires
             TocarSom("sons/Running.wav");
             await Task.Delay(550);
             pfcorrendo.Visible = false;
+            await Task.Delay(3000);
             posicaoFreire = 3;
+            verificarFreire();
         }
 
         //celular
@@ -318,8 +349,8 @@ namespace five_naites_ati_freires
                 };
                 tamanhoCelular();
                 this.Controls.Add(pcelular);
-                pcelular.BringToFront();
             }
+            pcelular.BringToFront();
             if (resposta == 0)
             {
                 pcelular.Image = Properties.Resources.celularCarregano;
@@ -377,6 +408,7 @@ namespace five_naites_ati_freires
                 transicaoCel.Image = null;
                 transicaoCel.Image = Properties.Resources.transicaoCelular;
             }
+            transicaoCel.BringToFront();
             transicaoCel.Visible = true;
         }
 
@@ -414,7 +446,7 @@ namespace five_naites_ati_freires
             if (btnCell == null)
             {
                 btnCell = new Button();
-                btnCell.BackColor = Color.White;
+                btnCell.BackColor = Color.Transparent;
                 btnCell.FlatStyle = FlatStyle.Flat;
                 btnCell.FlatAppearance.MouseDownBackColor = Color.Transparent;
                 btnCell.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -422,14 +454,6 @@ namespace five_naites_ati_freires
                 btnCell.Cursor = Cursors.Hand;
                 btnCell.FlatAppearance.BorderSize = 0;
                 btnCell.MouseClick += btnCell_MouseEnter;
-                if (celular == 0)
-                {
-                    btnCell.Text = "Abrir celular";
-                }
-                if (celular == 1)
-                {
-                    btnCell.Text = "Fechar celular";
-                }
                 tamanhoBtnCell();
                 this.Controls.Add(btnCell);
                 btnCell.SendToBack();
@@ -453,14 +477,13 @@ namespace five_naites_ati_freires
         {
             if (celular == 1)
             {
-                btnCell.Text = "Abrir celular";
                 TocarSom("sons/igptri.wav");
                 fecharCelular();
                 celular = 0;
                 lblteste.Text = "teste: " + celular;
                 pararCelular();
                 btnCell.Visible = false;
-                await Task.Delay(500);
+                await Task.Delay(450);
                 btnCell.Visible = true;
                 return;
             }
@@ -473,7 +496,6 @@ namespace five_naites_ati_freires
                 btnCell.Visible = true;
                 transicaoCel.Visible = false;
                 abrirCelular();
-                btnCell.Text = "Fechar celular";
                 celular = 1;
                 lblteste.Text = "teste: " + celular;
                 if (posicaoFreire == 3)
@@ -1109,7 +1131,7 @@ namespace five_naites_ati_freires
             if (btnProva == null)
             {
                 btnProva = new Button();
-                btnProva.BackColor = Color.White;
+                btnProva.BackColor = Color.Transparent;
                 btnProva.FlatStyle = FlatStyle.Flat;
                 btnProva.FlatAppearance.MouseDownBackColor = Color.Transparent;
                 btnProva.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -1122,19 +1144,19 @@ namespace five_naites_ati_freires
                 this.Controls.Add(btnProva);
             }
             btnProva.Visible = true;
+            btnProva.SendToBack();
         }
         void tamanhoBtnProva()
         {
 
             if (btnProva != null)
             {
-                btnProva.Size = new Size((int)((this.ClientSize.Width) / 4), (int)((this.ClientSize.Height) * 0.80));
+                btnProva.Size = new Size(this.ClientSize.Width, (int)((this.ClientSize.Height) * 0.50));
                 btnProva.Location = new Point(
-                    ((int)(this.ClientSize.Width - (this.ClientSize.Width *0.70))),
+                    (0),
                     (this.ClientSize.Height / 2 - (btnProva.Height / 2))
                     );
             }
-
         }
 
         bool portaAberta = false;
@@ -1238,26 +1260,26 @@ namespace five_naites_ati_freires
             lblRespostas.Visible = true;
             lblteste.Visible = true;
             if (btnMoverE != null)
-                btnMoverE.BackColor = Color.White;
+                btnMoverE.BackColor = Color.Transparent;
             if (btnMoverB != null)
-                btnMoverB.BackColor = Color.Gray;
+                btnMoverB.BackColor = Color.Transparent;
             if (btnMoverD != null)
-                btnMoverD.BackColor = Color.Red;
+                btnMoverD.BackColor = Color.Transparent;
             if (btnMoverC != null)
-                btnMoverC.BackColor = Color.Gray;
+                btnMoverC.BackColor = Color.Transparent;
             if (btnProva != null)
             {
-                btnProva.BackColor = Color.White;
+                btnProva.BackColor = Color.Transparent;
                 btnProva.Text = "Prova";
             }
             if (btnCell != null)
             {
-                btnCell.BackColor = Color.White;
+                btnCell.BackColor = Color.Transparent;
                 btnCell.Text = "Celular";
             }
             if (btnPorta != null)
             {
-                btnPorta.BackColor = Color.White;
+                btnPorta.BackColor = Color.Transparent;
                 btnPorta.Text = "Porta";
             }
         }
@@ -1280,7 +1302,7 @@ namespace five_naites_ati_freires
             {
                 btnMoverE = new Button();
                 btnMoverE.Text = " ";
-                btnMoverE.BackColor = Color.White;
+                btnMoverE.BackColor = Color.Transparent;
                 btnMoverE.FlatStyle = FlatStyle.Flat;
                 btnMoverE.FlatAppearance.BorderSize = 0;
                 btnMoverE.MouseEnter += btnMoverE_MouseEnter;
@@ -1297,7 +1319,7 @@ namespace five_naites_ati_freires
             {
                 btnMoverB = new Button();
                 btnMoverB.Text = " ";
-                btnMoverB.BackColor = Color.Gray;
+                btnMoverB.BackColor = Color.Transparent;
                 btnMoverB.FlatStyle = FlatStyle.Flat;
                 btnMoverB.FlatAppearance.BorderSize = 0;
                 btnMoverB.MouseEnter += btnMoverB_MouseEnter;
@@ -1315,7 +1337,7 @@ namespace five_naites_ati_freires
             {
                 btnMoverD = new Button();
                 btnMoverD.Text = " ";
-                btnMoverD.BackColor = Color.Red;
+                btnMoverD.BackColor = Color.Transparent;
                 btnMoverD.FlatStyle = FlatStyle.Flat;
                 btnMoverD.FlatAppearance.BorderSize = 0;
                 btnMoverD.MouseEnter += btnMoverD_MouseEnter;
@@ -1335,7 +1357,7 @@ namespace five_naites_ati_freires
             {
                 btnMoverC = new Button();
                 btnMoverC.Text = " ";
-                btnMoverC.BackColor = Color.Gray;
+                btnMoverC.BackColor = Color.Transparent;
                 btnMoverC.FlatStyle = FlatStyle.Flat;
                 btnMoverC.FlatAppearance.BorderSize = 0;
                 btnMoverC.MouseEnter += btnMoverC_MouseEnter;
@@ -1361,14 +1383,13 @@ namespace five_naites_ati_freires
             if (btnPorta == null)
             {
                 btnPorta = new Button();
-                btnPorta.BackColor = Color.White;
+                btnPorta.BackColor = Color.Transparent;
                 btnPorta.FlatStyle = FlatStyle.Flat;
                 btnPorta.FlatAppearance.MouseDownBackColor = Color.Transparent;
                 btnPorta.FlatAppearance.MouseOverBackColor = Color.Transparent;
                 btnPorta.Cursor = Cursors.Hand;
                 btnPorta.FlatAppearance.BorderSize = 0;
                 btnPorta.MouseClick += btnPorta_MouseEnter;
-                btnPorta.Text = "Abrir Porta";
                 tamanhobtnPorta();
                 this.Controls.Add(btnPorta);
             }
@@ -1478,7 +1499,9 @@ namespace five_naites_ati_freires
                     this.BackgroundImageLayout = ImageLayout.Stretch;
                     criarbtnE();
                     if (posicaoFreire == 2)
-                    { criarPFcorreno(); }
+                    { await criarPFcorreno();
+                      posicaoFreire = 3;
+                    }
                     break;
                 case 2:
                     if (portaAberta == true)
@@ -1507,7 +1530,7 @@ namespace five_naites_ati_freires
                     await transicaoCelular();
                     this.BackgroundImage = Properties.Resources.cv3;
                     this.BackgroundImageLayout = ImageLayout.Stretch;
-                    criarbtnAbrirC();
+                    await criarbtnAbrirC();
                     criarbtnC();
                     criarbtnAbrirP();
                     btnProva.BringToFront();
@@ -1552,9 +1575,6 @@ namespace five_naites_ati_freires
                     this.BackgroundImageLayout = ImageLayout.Stretch;
                     criarbtnD();
                     criarbtnAbrirPr();
-                    {
-                        btnPorta.Text = "abrir porta";
-                    }
                     break;
                 case 1:
                     await transicaoLousa();
