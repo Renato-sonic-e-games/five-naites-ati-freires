@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaJogo));
             timerGeral = new System.Windows.Forms.Timer(components);
             lblContador = new Label();
             timerC = new System.Windows.Forms.Timer(components);
@@ -39,6 +40,7 @@
             timerPopup = new System.Windows.Forms.Timer(components);
             btnJogar = new Button();
             timerFreirezada = new System.Windows.Forms.Timer(components);
+            lblFreirep = new Label();
             SuspendLayout();
             // 
             // timerGeral
@@ -51,7 +53,7 @@
             lblContador.AutoSize = true;
             lblContador.Location = new Point(49, 35);
             lblContador.Name = "lblContador";
-            lblContador.Size = new Size(43, 15);
+            lblContador.Size = new Size(44, 15);
             lblContador.TabIndex = 1;
             lblContador.Text = "Timer: ";
             // 
@@ -111,14 +113,29 @@
             btnJogar.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btnJogar.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnJogar.FlatStyle = FlatStyle.Flat;
-            btnJogar.Location = new Point(331, 176);
+            btnJogar.ForeColor = Color.Transparent;
+            btnJogar.Location = new Point(593, 309);
             btnJogar.Name = "btnJogar";
-            btnJogar.Size = new Size(130, 60);
+            btnJogar.Size = new Size(203, 89);
             btnJogar.TabIndex = 6;
             btnJogar.UseVisualStyleBackColor = false;
             btnJogar.Click += btnJogar_Click;
             btnJogar.MouseEnter += btnJogar_MouseEnter;
             btnJogar.MouseLeave += btnJogar_MouseLeave;
+            // 
+            // timerFreirezada
+            // 
+            timerFreirezada.Interval = 1000;
+            timerFreirezada.Tick += timerFreirezada_Tick;
+            // 
+            // lblFreirep
+            // 
+            lblFreirep.AutoSize = true;
+            lblFreirep.Location = new Point(49, 141);
+            lblFreirep.Name = "lblFreirep";
+            lblFreirep.Size = new Size(85, 15);
+            lblFreirep.TabIndex = 7;
+            lblFreirep.Text = "FreirePosition: ";
             // 
             // telaJogo
             // 
@@ -127,7 +144,8 @@
             BackColor = SystemColors.Control;
             BackgroundImage = Properties.Resources.FNAFTitleScreen;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1366, 768);
+            Controls.Add(lblFreirep);
             Controls.Add(btnJogar);
             Controls.Add(lbldirecao);
             Controls.Add(lblteste);
@@ -136,6 +154,7 @@
             Controls.Add(lblContador);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "telaJogo";
             Text = "FNAFreire";
             TopMost = true;
@@ -157,6 +176,7 @@
         private System.Windows.Forms.Timer timerPopup;
         private Button btnJogar;
         private System.Windows.Forms.Timer timerFreirezada;
+        private Label lblFreirep;
     }
 }
 
