@@ -41,7 +41,7 @@
             btnJogar = new Button();
             timerFreirezada = new System.Windows.Forms.Timer(components);
             lblFreirep = new Label();
-            progressBar1 = new ProgressBar();
+            pbCelular = new ProgressBar();
             btnajuda = new Button();
             btnopcao = new Button();
             btnSair = new Button();
@@ -141,12 +141,12 @@
             lblFreirep.TabIndex = 7;
             lblFreirep.Text = "FreirePosition: ";
             // 
-            // progressBar1
+            // pbCelular
             // 
-            progressBar1.Location = new Point(1127, -1);
-            progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(238, 23);
-            progressBar1.TabIndex = 8;
+            pbCelular.Location = new Point(1127, -1);
+            pbCelular.Name = "pbCelular";
+            pbCelular.Size = new Size(238, 23);
+            pbCelular.TabIndex = 8;
             // 
             // btnajuda
             // 
@@ -219,7 +219,7 @@
             Controls.Add(btnSair);
             Controls.Add(btnopcao);
             Controls.Add(btnajuda);
-            Controls.Add(progressBar1);
+            Controls.Add(pbCelular);
             Controls.Add(lblFreirep);
             Controls.Add(btnJogar);
             Controls.Add(lbldirecao);
@@ -251,7 +251,7 @@
         private Button btnJogar;
         private System.Windows.Forms.Timer timerFreirezada;
         private Label lblFreirep;
-        private ProgressBar progressBar1;
+        private ProgressBar pbCelular;
         private Button btnajuda;
         private Button btnopcao;
         private Button btnSair;
