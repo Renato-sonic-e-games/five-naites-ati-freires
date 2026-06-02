@@ -57,7 +57,7 @@
             lblContador.AutoSize = true;
             lblContador.Location = new Point(49, 35);
             lblContador.Name = "lblContador";
-            lblContador.Size = new Size(44, 15);
+            lblContador.Size = new Size(43, 15);
             lblContador.TabIndex = 1;
             lblContador.Text = "Timer: ";
             // 
@@ -233,7 +233,6 @@
             Name = "telaJogo";
             Text = "FNAFreire";
             TopMost = true;
-            WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
             KeyDown += Form1_KeyDown;
             ResumeLayout(false);

@@ -19,10 +19,12 @@ namespace five_naites_ati_freires
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            lblFreirep.Visible = false;
             criarMenuInicial();
         }
         void criarMenuInicial()
         {
+
             direcao = -1;
             this.Resize += Form1_Resize;
             this.ClientSize = new Size(1366, 768);
@@ -40,7 +42,6 @@ namespace five_naites_ati_freires
             timerGeral.Start();
             direcao = 0;
             perguntas = 0;
-            habilitarLabels();
             this.BackgroundImage = sala;
             criarbtnE();
             criarbtnD();
@@ -89,7 +90,7 @@ namespace five_naites_ati_freires
             jumpscare.BringToFront();
             this.Controls.Add(jumpscare);
             TrocarMusica("musgas/nada.mp3");
-            TocarSom("sons/Jumpscare.wav");
+            TocarSom("sons/Jumpscare.m4a");
             if (pcelular != null)
                 fecharCelular();
             if (prova != null)
@@ -158,7 +159,7 @@ namespace five_naites_ati_freires
         // freire
 
         int agressividadeFreire;
-        int lvlAgressividadeFreire = 15;
+        int lvlAgressividadeFreire = 10;
         int posicaoFreire = 1;
         // -1 = fora da visão
         // 0 = porta longe
@@ -354,7 +355,7 @@ namespace five_naites_ati_freires
         {
             if (celular == 1)
             {
-                TocarSom("sons/igptri.wav");
+                TocarSom("sons/igptri.m4a");
                 fecharCelular();
                 pararCelular();
                 btnCell.Visible = false;
@@ -552,7 +553,7 @@ namespace five_naites_ati_freires
         {
             if (celular == 1)
             {
-                TocarSom("sons/igptri.wav");
+                TocarSom("sons/igptri.m4a");
                 fecharCelular();
                 pararCelular();
                 btnCell.Visible = false;
@@ -574,7 +575,7 @@ namespace five_naites_ati_freires
             }
             if (celular == 0)
             {
-                TocarSom("sons/gptiniciar.wav");
+                TocarSom("sons/igptiniciar.m4a");
                 btnCell.Visible = false;
                 desabilitarBotoes();
                 TransicaoCell();
@@ -607,7 +608,7 @@ namespace five_naites_ati_freires
                     resposta = 1;
                     timerC.Stop();
                     pcelular.Image = Properties.Resources.celularRespo;
-                    TocarSom("sons/resenhado.wav");
+                    TocarSom("sons/resenhado.m4a");
                     tempoRespo = 0;
                 }
             }
@@ -672,6 +673,15 @@ namespace five_naites_ati_freires
                     btnPr[18].Enabled = true;
                     btnPr[19].Enabled = true;
                     btnPr[0].Enabled = true;
+                    break;
+                case 5:
+                    desabilitarBotoes();
+                    timerC.Stop();
+                    timerGeral.Stop();
+                    timerFreirezada.Stop();
+                    timerPopup.Stop();
+                    criarbtnvoltar();
+                    this.BackgroundImage = Properties.Resources.gameWon;
                     break;
             }
         }
@@ -1699,7 +1709,6 @@ namespace five_naites_ati_freires
             if (portaAberta == false)
             {
                 this.BackgroundImage = portaaberta;
-                btnPorta.Text = "Fechar porta";
                 portaAberta = true;
                 TocarSom("sons/abrindo1.wav");
                 if (celular == 1 && posicaoFreire == 1)

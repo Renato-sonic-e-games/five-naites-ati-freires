@@ -130,9 +130,6 @@
   <data name="janela" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\janela.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnajudaselecionado" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnajudaselecionado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="voltar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\voltar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,6 +148,9 @@
   <data name="cv3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cv3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnsairselecionado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnsairselecionado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="wtol2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wtol22.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -168,9 +168,6 @@
   </data>
   <data name="p11x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\p11x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="p7x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\p7x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dv1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dv1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,8 +208,14 @@
   <data name="wtol" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wtol.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fechandocelular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fechandocelular.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="p10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\p10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ltow2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ltow22.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="p2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\p2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,8 +232,11 @@
   <data name="p4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\p4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cv1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cv1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="p3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\p3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnsair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnsair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BotaoSair" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BotaoSair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,14 +247,14 @@
   <data name="ltow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ltow.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="p16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\p16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="FNAFTitleScreen (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FNAFTitleScreen (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tripitripi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tripitripi.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="p13" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\p13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ltod2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ltod22.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -265,9 +271,6 @@
   <data name="p18" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\p18.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Paulofreire-janela" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Paulofreire-janela.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="p15" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\p15.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -279,6 +282,9 @@
   </data>
   <data name="paredeJanelaZoom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\janelaZoom (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fv5(freire)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fv5(freire).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="transitiontest1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\transitiontest1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -310,8 +316,8 @@
   <data name="fv4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fv4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pZoom" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pZoom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnajudaselecionado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnajudaselecionado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="p19x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\p19x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -331,38 +337,35 @@
   <data name="ltoc2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ltoc22.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ltow2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ltow22.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="p16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\p16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="p3x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\p3x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="p13" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\p13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cv1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cv1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnopcao" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnopcao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnsair" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnsair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pZoom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pZoom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnsairselecionado" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnsairselecionado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Paulofreire-janela" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Paulofreire-janela.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pfcorreno" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pfcorreno1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fv5(freire)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fv5(freire).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="p7x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\p7x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="p6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\p6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="foxy-jumpscare" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\foxy-jumpscare.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="p3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\p3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="p5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\p5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -376,7 +379,7 @@
   <data name="celular" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\celular.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fechandocelular" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fechandocelular.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="gameWon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gameWon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
