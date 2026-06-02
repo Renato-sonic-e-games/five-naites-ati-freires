@@ -113,6 +113,66 @@ namespace five_naites_ati_freires.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnajuda {
+            get {
+                object obj = ResourceManager.GetObject("btnajuda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnajudaselecionado {
+            get {
+                object obj = ResourceManager.GetObject("btnajudaselecionado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnopcao {
+            get {
+                object obj = ResourceManager.GetObject("btnopcao", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnopcaoselecionado {
+            get {
+                object obj = ResourceManager.GetObject("btnopcaoselecionado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnsair {
+            get {
+                object obj = ResourceManager.GetObject("btnsair", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnsairselecionado {
+            get {
+                object obj = ResourceManager.GetObject("btnsairselecionado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap celular {
             get {
                 object obj = ResourceManager.GetObject("celular", resourceCulture);
@@ -193,6 +253,16 @@ namespace five_naites_ati_freires.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap diario1 {
+            get {
+                object obj = ResourceManager.GetObject("diario1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dtol {
             get {
                 object obj = ResourceManager.GetObject("dtol", resourceCulture);
@@ -233,9 +303,19 @@ namespace five_naites_ati_freires.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FNAFTitleScreen {
+        internal static System.Drawing.Bitmap fechandocelular {
             get {
-                object obj = ResourceManager.GetObject("FNAFTitleScreen", resourceCulture);
+                object obj = ResourceManager.GetObject("fechandocelular", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FNAFTitleScreen__1_ {
+            get {
+                object obj = ResourceManager.GetObject("FNAFTitleScreen (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -376,6 +456,16 @@ namespace five_naites_ati_freires.Properties {
         internal static System.Drawing.Bitmap ltow2 {
             get {
                 object obj = ResourceManager.GetObject("ltow2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap opcao {
+            get {
+                object obj = ResourceManager.GetObject("opcao", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -786,6 +876,16 @@ namespace five_naites_ati_freires.Properties {
         internal static System.Drawing.Bitmap tripitripi_ezgif_com_reverse {
             get {
                 object obj = ResourceManager.GetObject("tripitripi-ezgif.com-reverse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap voltar {
+            get {
+                object obj = ResourceManager.GetObject("voltar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

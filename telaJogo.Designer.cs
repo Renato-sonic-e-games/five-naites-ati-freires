@@ -42,6 +42,9 @@
             timerFreirezada = new System.Windows.Forms.Timer(components);
             lblFreirep = new Label();
             progressBar1 = new ProgressBar();
+            btnajuda = new Button();
+            btnopcao = new Button();
+            btnSair = new Button();
             SuspendLayout();
             // 
             // timerGeral
@@ -145,14 +148,77 @@
             progressBar1.Size = new Size(238, 23);
             progressBar1.TabIndex = 8;
             // 
+            // btnajuda
+            // 
+            btnajuda.Anchor = AnchorStyles.None;
+            btnajuda.BackColor = Color.Transparent;
+            btnajuda.BackgroundImage = Properties.Resources.btnajuda;
+            btnajuda.BackgroundImageLayout = ImageLayout.Zoom;
+            btnajuda.FlatAppearance.BorderSize = 0;
+            btnajuda.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnajuda.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnajuda.FlatStyle = FlatStyle.Flat;
+            btnajuda.ForeColor = Color.Transparent;
+            btnajuda.Location = new Point(464, 406);
+            btnajuda.Name = "btnajuda";
+            btnajuda.Size = new Size(438, 54);
+            btnajuda.TabIndex = 9;
+            btnajuda.UseVisualStyleBackColor = false;
+            btnajuda.Click += btnajuda_Click;
+            btnajuda.MouseEnter += btnajuda_MouseEnter;
+            btnajuda.MouseLeave += btnajuda_MouseLeave;
+            // 
+            // btnopcao
+            // 
+            btnopcao.Anchor = AnchorStyles.None;
+            btnopcao.BackColor = Color.Transparent;
+            btnopcao.BackgroundImage = Properties.Resources.btnopcao;
+            btnopcao.BackgroundImageLayout = ImageLayout.Zoom;
+            btnopcao.FlatAppearance.BorderSize = 0;
+            btnopcao.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnopcao.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnopcao.FlatStyle = FlatStyle.Flat;
+            btnopcao.ForeColor = Color.Transparent;
+            btnopcao.Location = new Point(463, 473);
+            btnopcao.Name = "btnopcao";
+            btnopcao.Size = new Size(438, 65);
+            btnopcao.TabIndex = 10;
+            btnopcao.UseVisualStyleBackColor = false;
+            btnopcao.Click += btnopcao_Click;
+            btnopcao.MouseEnter += btnopcao_MouseEnter;
+            btnopcao.MouseLeave += btnopcao_MouseLeave;
+            // 
+            // btnSair
+            // 
+            btnSair.Anchor = AnchorStyles.None;
+            btnSair.BackColor = Color.Transparent;
+            btnSair.BackgroundImage = Properties.Resources.btnsair;
+            btnSair.BackgroundImageLayout = ImageLayout.Zoom;
+            btnSair.FlatAppearance.BorderSize = 0;
+            btnSair.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnSair.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnSair.FlatStyle = FlatStyle.Flat;
+            btnSair.ForeColor = Color.Transparent;
+            btnSair.Location = new Point(463, 556);
+            btnSair.Name = "btnSair";
+            btnSair.Size = new Size(438, 78);
+            btnSair.TabIndex = 11;
+            btnSair.UseVisualStyleBackColor = false;
+            btnSair.Click += btnSair_Click;
+            btnSair.MouseEnter += btnSair_MouseEnter;
+            btnSair.MouseLeave += btnSair_MouseLeave;
+            // 
             // telaJogo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            BackgroundImage = Properties.Resources.FNAFTitleScreen;
+            BackgroundImage = Properties.Resources.FNAFTitleScreen__1_;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1366, 768);
+            Controls.Add(btnSair);
+            Controls.Add(btnopcao);
+            Controls.Add(btnajuda);
             Controls.Add(progressBar1);
             Controls.Add(lblFreirep);
             Controls.Add(btnJogar);
@@ -187,6 +253,9 @@
         private System.Windows.Forms.Timer timerFreirezada;
         private Label lblFreirep;
         private ProgressBar progressBar1;
+        private Button btnajuda;
+        private Button btnopcao;
+        private Button btnSair;
     }
 }
 
