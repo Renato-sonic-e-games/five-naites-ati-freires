@@ -41,10 +41,15 @@
             btnJogar = new Button();
             timerFreirezada = new System.Windows.Forms.Timer(components);
             lblFreirep = new Label();
-            pbCelular = new ProgressBar();
             btnajuda = new Button();
             btnopcao = new Button();
             btnSair = new Button();
+            pbtimer = new PictureBox();
+            lblhora = new Label();
+            lblMinutos = new Label();
+            pbload = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pbtimer).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbload).BeginInit();
             SuspendLayout();
             // 
             // timerGeral
@@ -55,9 +60,9 @@
             // lblContador
             // 
             lblContador.AutoSize = true;
-            lblContador.Location = new Point(49, 35);
+            lblContador.Location = new Point(45, 258);
             lblContador.Name = "lblContador";
-            lblContador.Size = new Size(43, 15);
+            lblContador.Size = new Size(44, 15);
             lblContador.TabIndex = 1;
             lblContador.Text = "Timer: ";
             // 
@@ -69,7 +74,7 @@
             // lblRespostas
             // 
             lblRespostas.AutoSize = true;
-            lblRespostas.Location = new Point(49, 60);
+            lblRespostas.Location = new Point(45, 283);
             lblRespostas.Name = "lblRespostas";
             lblRespostas.Size = new Size(70, 15);
             lblRespostas.TabIndex = 2;
@@ -78,7 +83,7 @@
             // lblC
             // 
             lblC.AutoSize = true;
-            lblC.Location = new Point(49, 84);
+            lblC.Location = new Point(45, 307);
             lblC.Name = "lblC";
             lblC.Size = new Size(73, 15);
             lblC.TabIndex = 3;
@@ -87,7 +92,7 @@
             // lblteste
             // 
             lblteste.AutoSize = true;
-            lblteste.Location = new Point(49, 110);
+            lblteste.Location = new Point(45, 333);
             lblteste.Name = "lblteste";
             lblteste.Size = new Size(38, 15);
             lblteste.TabIndex = 4;
@@ -118,7 +123,7 @@
             btnJogar.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnJogar.FlatStyle = FlatStyle.Flat;
             btnJogar.ForeColor = Color.Transparent;
-            btnJogar.Location = new Point(463, 313);
+            btnJogar.Location = new Point(463, 304);
             btnJogar.Name = "btnJogar";
             btnJogar.Size = new Size(438, 78);
             btnJogar.TabIndex = 6;
@@ -135,18 +140,12 @@
             // lblFreirep
             // 
             lblFreirep.AutoSize = true;
-            lblFreirep.Location = new Point(49, 141);
+            lblFreirep.Location = new Point(45, 364);
             lblFreirep.Name = "lblFreirep";
             lblFreirep.Size = new Size(85, 15);
             lblFreirep.TabIndex = 7;
             lblFreirep.Text = "FreirePosition: ";
-            // 
-            // pbCelular
-            // 
-            pbCelular.Location = new Point(1127, -1);
-            pbCelular.Name = "pbCelular";
-            pbCelular.Size = new Size(238, 23);
-            pbCelular.TabIndex = 8;
+            lblFreirep.Visible = false;
             // 
             // btnajuda
             // 
@@ -159,7 +158,7 @@
             btnajuda.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnajuda.FlatStyle = FlatStyle.Flat;
             btnajuda.ForeColor = Color.Transparent;
-            btnajuda.Location = new Point(464, 406);
+            btnajuda.Location = new Point(465, 393);
             btnajuda.Name = "btnajuda";
             btnajuda.Size = new Size(438, 54);
             btnajuda.TabIndex = 9;
@@ -179,7 +178,7 @@
             btnopcao.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnopcao.FlatStyle = FlatStyle.Flat;
             btnopcao.ForeColor = Color.Transparent;
-            btnopcao.Location = new Point(463, 473);
+            btnopcao.Location = new Point(463, 457);
             btnopcao.Name = "btnopcao";
             btnopcao.Size = new Size(438, 65);
             btnopcao.TabIndex = 10;
@@ -199,7 +198,7 @@
             btnSair.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnSair.FlatStyle = FlatStyle.Flat;
             btnSair.ForeColor = Color.Transparent;
-            btnSair.Location = new Point(463, 556);
+            btnSair.Location = new Point(463, 539);
             btnSair.Name = "btnSair";
             btnSair.Size = new Size(438, 78);
             btnSair.TabIndex = 11;
@@ -208,6 +207,59 @@
             btnSair.MouseEnter += btnSair_MouseEnter;
             btnSair.MouseLeave += btnSair_MouseLeave;
             // 
+            // pbtimer
+            // 
+            pbtimer.BackColor = SystemColors.ActiveCaptionText;
+            pbtimer.Image = Properties.Resources.relogio;
+            pbtimer.Location = new Point(0, 0);
+            pbtimer.Name = "pbtimer";
+            pbtimer.Size = new Size(203, 96);
+            pbtimer.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbtimer.TabIndex = 12;
+            pbtimer.TabStop = false;
+            pbtimer.Visible = false;
+            // 
+            // lblhora
+            // 
+            lblhora.BackColor = SystemColors.ActiveCaptionText;
+            lblhora.Font = new Font("DS-Digital", 39.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblhora.ForeColor = Color.Red;
+            lblhora.Location = new Point(14, 16);
+            lblhora.Name = "lblhora";
+            lblhora.Size = new Size(81, 64);
+            lblhora.TabIndex = 13;
+            lblhora.Text = "05";
+            lblhora.TextAlign = ContentAlignment.MiddleCenter;
+            lblhora.Visible = false;
+            lblhora.Click += lblhora_Click;
+            // 
+            // lblMinutos
+            // 
+            lblMinutos.AutoSize = true;
+            lblMinutos.BackColor = SystemColors.ActiveCaptionText;
+            lblMinutos.Font = new Font("DS-Digital", 40F, FontStyle.Bold | FontStyle.Italic);
+            lblMinutos.ForeColor = Color.Red;
+            lblMinutos.Location = new Point(110, 22);
+            lblMinutos.Name = "lblMinutos";
+            lblMinutos.Size = new Size(77, 53);
+            lblMinutos.TabIndex = 14;
+            lblMinutos.Text = "00";
+            lblMinutos.TextAlign = ContentAlignment.MiddleCenter;
+            lblMinutos.Visible = false;
+            // 
+            // pbload
+            // 
+            pbload.BackColor = Color.Black;
+            pbload.BackgroundImageLayout = ImageLayout.None;
+            pbload.Image = Properties.Resources.iconeloading;
+            pbload.Location = new Point(1126, 517);
+            pbload.Name = "pbload";
+            pbload.Size = new Size(245, 234);
+            pbload.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbload.TabIndex = 15;
+            pbload.TabStop = false;
+            pbload.Visible = false;
+            // 
             // telaJogo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -215,11 +267,14 @@
             BackColor = SystemColors.Control;
             BackgroundImage = Properties.Resources.FNAFTitleScreen__1_;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1366, 768);
+            ClientSize = new Size(1366, 749);
+            Controls.Add(pbload);
+            Controls.Add(lblMinutos);
+            Controls.Add(lblhora);
+            Controls.Add(pbtimer);
             Controls.Add(btnSair);
             Controls.Add(btnopcao);
             Controls.Add(btnajuda);
-            Controls.Add(pbCelular);
             Controls.Add(lblFreirep);
             Controls.Add(btnJogar);
             Controls.Add(lbldirecao);
@@ -228,13 +283,15 @@
             Controls.Add(lblRespostas);
             Controls.Add(lblContador);
             DoubleBuffered = true;
-            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "telaJogo";
+            StartPosition = FormStartPosition.WindowsDefaultBounds;
             Text = "FNAFreire";
             TopMost = true;
             Load += Form1_Load;
             KeyDown += Form1_KeyDown;
+            ((System.ComponentModel.ISupportInitialize)pbtimer).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbload).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -251,10 +308,13 @@
         private Button btnJogar;
         private System.Windows.Forms.Timer timerFreirezada;
         private Label lblFreirep;
-        private ProgressBar pbCelular;
         private Button btnajuda;
         private Button btnopcao;
         private Button btnSair;
+        private PictureBox pbtimer;
+        private Label lblhora;
+        private Label lblMinutos;
+        private PictureBox pbload;
     }
 }
 
