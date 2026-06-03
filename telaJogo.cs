@@ -85,6 +85,7 @@ namespace five_naites_ati_freires
             btnopcao.Visible = true;
         }
 
+        Random voice;
         PictureBox jumpscare;
         async Task gameover()
         {
@@ -127,9 +128,49 @@ namespace five_naites_ati_freires
             musicaPlayer.Stop();
             await Task.Delay(2100);
             jumpscare.Visible = false;
+            voice = new Random();
+            switch (voice.Next(0, 12))
+            {
+                case 0:
+                    TocarSom("voicelines/gameover1.m4a");
+                    break;
+                case 1:
+                    TocarSom("voicelines/gameover2.m4a");
+                    break;
+                case 2:
+                    TocarSom("voicelines/gameover3.m4a");
+                    break;
+                case 3:
+                    TocarSom("voicelines/gameover4.m4a");
+                    break;
+                case 4:
+                    TocarSom("voicelines/gameover5.m4a");
+                    break;
+                case 5:
+                    TocarSom("voicelines/gameover6.m4a");
+                    break;
+                case 6:
+                    TocarSom("voicelines/gameover7.m4a");
+                    break;
+                case 7:
+                    TocarSom("voicelines/gameover8.m4a");
+                    break;
+                case 8:
+                    TocarSom("voicelines/gameover9.m4a");
+                    break;
+                case 9:
+                    TocarSom("voicelines/gameover10.m4a");
+                    break;
+                case 10:
+                    TocarSom("voicelines/gameover11.m4a");
+                    break;
+                case 11:
+                    TocarSom("voicelines/gameover12.m4a");
+                    break;
+            }
             this.BackgroundImage = null;
             this.BackColor = Color.Black;
-            await Task.Delay(3000);
+            await Task.Delay(4000);
             this.BackgroundImage = Properties.Resources.gameOverFull;
             criarbtngameover();
             TrocarMusica("musgas/over.m4a");
@@ -682,7 +723,7 @@ namespace five_naites_ati_freires
 
         // Prova
         int tempoRespo = 0;
-        int resposta = 5;
+        int resposta = 0;
         int perguntas = 0;
         Button btnProva;
         PictureBox telaPreta;
@@ -1099,6 +1140,34 @@ namespace five_naites_ati_freires
              btnPr[13], btnPr[14], btnPr[15], btnPr[16],
              btnPr[17], btnPr[18], btnPr[19], btnPr[0]
             };
+            tamanhobtnprova();
+        }
+        void tamanhobtnprova()
+        {
+            foreach (Button btn in botoesProva)
+            {
+                btn.Size = new Size(this.ClientSize.Width * 292 / 1366, this.ClientSize.Height * 29 / 768);
+            }
+            btnPr[0].Location = new Point (this.ClientSize.Width * 691 / 1366, this.ClientSize.Height * 585 / 768);
+            btnPr[1].Location = new Point(this.ClientSize.Width * 170/1366, this.ClientSize.Height * 272 / 768);
+            btnPr[2].Location = new Point(this.ClientSize.Width * 327/1366, this.ClientSize.Height * 272/ 768);
+            btnPr[3].Location = new Point(this.ClientSize.Width * 170/1366, this.ClientSize.Height * 307/ 768);
+            btnPr[4].Location = new Point(this.ClientSize.Width * 327/1366, this.ClientSize.Height * 307/ 768);
+            btnPr[5].Location = new Point(this.ClientSize.Width * 181/1366, this.ClientSize.Height * 392/ 768);
+            btnPr[6].Location = new Point(this.ClientSize.Width * 181/1366, this.ClientSize.Height * 427/ 768);
+            btnPr[7].Location = new Point(this.ClientSize.Width * 181/1366, this.ClientSize.Height * 462/ 768);
+            btnPr[8].Location = new Point(this.ClientSize.Width * 181/1366, this.ClientSize.Height * 497/ 768);
+            btnPr[9].Location = new Point(this.ClientSize.Width * 181/1366, this.ClientSize.Height * 605/ 768);
+            btnPr[10].Location = new Point(this.ClientSize.Width * 327/1366, this.ClientSize.Height * 605/ 768);
+            btnPr[11].Location = new Point(this.ClientSize.Width * 181/1366, this.ClientSize.Height * 640/ 768);
+            btnPr[12].Location = new Point(this.ClientSize.Width * 327/1366, this.ClientSize.Height * 640/ 768);
+            btnPr[13].Location = new Point(this.ClientSize.Width * 691/1366, this.ClientSize.Height * 244/ 768);
+            btnPr[14].Location = new Point(this.ClientSize.Width * 691/1366, this.ClientSize.Height * 279/ 768);
+            btnPr[15].Location = new Point(this.ClientSize.Width * 691/1366, this.ClientSize.Height * 314/ 768);
+            btnPr[16].Location = new Point(this.ClientSize.Width * 691/1366, this.ClientSize.Height * 349/ 768);
+            btnPr[17].Location = new Point(this.ClientSize.Width * 691/1366, this.ClientSize.Height * 480/ 768);
+            btnPr[18].Location = new Point(this.ClientSize.Width * 691/1366, this.ClientSize.Height * 515/ 768);
+            btnPr[19].Location = new Point(this.ClientSize.Width * 691/1366, this.ClientSize.Height * 550/ 768);
         }
         void spawnarBotoes()
         {
@@ -1181,7 +1250,8 @@ namespace five_naites_ati_freires
             }
             else
             {
-                MessageBox.Show("Eu não posso chutar nessa prova...");
+                
+                //MessageBox.Show("Eu não posso chutar nessa prova...");
             }
         }
 
