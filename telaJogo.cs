@@ -26,11 +26,14 @@ namespace five_naites_ati_freires
             tempos = 0;
             lblhora.Text = "05";
             lblMinutos.Text = "00";
-            btnPr[3].BackgroundImage = Properties.Resources.p3;
-            btnPr[7].BackgroundImage = Properties.Resources.p7;
-            btnPr[11].BackgroundImage = Properties.Resources.p11;
-            btnPr[15].BackgroundImage = Properties.Resources.p15;
-            btnPr[19].BackgroundImage = Properties.Resources.p19;
+            if (btnPr[3] != null)
+            {
+                btnPr[3].BackgroundImage = Properties.Resources.p3;
+                btnPr[7].BackgroundImage = Properties.Resources.p7;
+                btnPr[11].BackgroundImage = Properties.Resources.p11;
+                btnPr[15].BackgroundImage = Properties.Resources.p15;
+                btnPr[19].BackgroundImage = Properties.Resources.p19;
+            }
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -86,6 +89,7 @@ namespace five_naites_ati_freires
         }
 
         Random voice;
+        Random voiceplayer;
         PictureBox jumpscare;
         async Task gameover()
         {
@@ -178,23 +182,24 @@ namespace five_naites_ati_freires
         Button btngamoverSair;
         void criarbtngameover()
         {
-            if (btngamoverSair == null) {
+            if (btngamoverSair == null)
+            {
                 btngamoverSair = new Button();
-            btngamoverSair.BackColor = Color.Transparent;
-            btngamoverSair.BackgroundImage = Properties.Resources.botaoGameOver;
-            btngamoverSair.BackgroundImageLayout = ImageLayout.Stretch;
-            btngamoverSair.FlatAppearance.BorderSize = 0;
-            btngamoverSair.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            btngamoverSair.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            btngamoverSair.FlatStyle = FlatStyle.Flat;
-            btngamoverSair.ForeColor = Color.Transparent;
-            btngamoverSair.Name = "btngamoverSair";
-            btngamoverSair.TabIndex = 15;
-            btngamoverSair.UseVisualStyleBackColor = false;
-            tamanhobtngameover();
-            btngamoverSair.Click += btnvoltar_MouseEnter;
-            btngamoverSair.MouseEnter += btngamoverSair_MouseEnter;
-            btngamoverSair.MouseLeave += btngamoverSair_MouseLeave;
+                btngamoverSair.BackColor = Color.Transparent;
+                btngamoverSair.BackgroundImage = Properties.Resources.botaoGameOver;
+                btngamoverSair.BackgroundImageLayout = ImageLayout.Stretch;
+                btngamoverSair.FlatAppearance.BorderSize = 0;
+                btngamoverSair.FlatAppearance.MouseDownBackColor = Color.Transparent;
+                btngamoverSair.FlatAppearance.MouseOverBackColor = Color.Transparent;
+                btngamoverSair.FlatStyle = FlatStyle.Flat;
+                btngamoverSair.ForeColor = Color.Transparent;
+                btngamoverSair.Name = "btngamoverSair";
+                btngamoverSair.TabIndex = 15;
+                btngamoverSair.UseVisualStyleBackColor = false;
+                tamanhobtngameover();
+                btngamoverSair.Click += btnvoltar_MouseEnter;
+                btngamoverSair.MouseEnter += btngamoverSair_MouseEnter;
+                btngamoverSair.MouseLeave += btngamoverSair_MouseLeave;
                 this.Controls.Add(btngamoverSair);
             }
             btngamoverSair.Visible = true;
@@ -1148,26 +1153,26 @@ namespace five_naites_ati_freires
             {
                 btn.Size = new Size(this.ClientSize.Width * 292 / 1366, this.ClientSize.Height * 29 / 768);
             }
-            btnPr[0].Location = new Point (this.ClientSize.Width * 691 / 1366, this.ClientSize.Height * 585 / 768);
-            btnPr[1].Location = new Point(this.ClientSize.Width * 170/1366, this.ClientSize.Height * 272 / 768);
-            btnPr[2].Location = new Point(this.ClientSize.Width * 327/1366, this.ClientSize.Height * 272/ 768);
-            btnPr[3].Location = new Point(this.ClientSize.Width * 170/1366, this.ClientSize.Height * 307/ 768);
-            btnPr[4].Location = new Point(this.ClientSize.Width * 327/1366, this.ClientSize.Height * 307/ 768);
-            btnPr[5].Location = new Point(this.ClientSize.Width * 181/1366, this.ClientSize.Height * 392/ 768);
-            btnPr[6].Location = new Point(this.ClientSize.Width * 181/1366, this.ClientSize.Height * 427/ 768);
-            btnPr[7].Location = new Point(this.ClientSize.Width * 181/1366, this.ClientSize.Height * 462/ 768);
-            btnPr[8].Location = new Point(this.ClientSize.Width * 181/1366, this.ClientSize.Height * 497/ 768);
-            btnPr[9].Location = new Point(this.ClientSize.Width * 181/1366, this.ClientSize.Height * 605/ 768);
-            btnPr[10].Location = new Point(this.ClientSize.Width * 327/1366, this.ClientSize.Height * 605/ 768);
-            btnPr[11].Location = new Point(this.ClientSize.Width * 181/1366, this.ClientSize.Height * 640/ 768);
-            btnPr[12].Location = new Point(this.ClientSize.Width * 327/1366, this.ClientSize.Height * 640/ 768);
-            btnPr[13].Location = new Point(this.ClientSize.Width * 691/1366, this.ClientSize.Height * 244/ 768);
-            btnPr[14].Location = new Point(this.ClientSize.Width * 691/1366, this.ClientSize.Height * 279/ 768);
-            btnPr[15].Location = new Point(this.ClientSize.Width * 691/1366, this.ClientSize.Height * 314/ 768);
-            btnPr[16].Location = new Point(this.ClientSize.Width * 691/1366, this.ClientSize.Height * 349/ 768);
-            btnPr[17].Location = new Point(this.ClientSize.Width * 691/1366, this.ClientSize.Height * 480/ 768);
-            btnPr[18].Location = new Point(this.ClientSize.Width * 691/1366, this.ClientSize.Height * 515/ 768);
-            btnPr[19].Location = new Point(this.ClientSize.Width * 691/1366, this.ClientSize.Height * 550/ 768);
+            btnPr[0].Location = new Point(this.ClientSize.Width * 691 / 1366, this.ClientSize.Height * 585 / 768);
+            btnPr[1].Location = new Point(this.ClientSize.Width * 170 / 1366, this.ClientSize.Height * 272 / 768);
+            btnPr[2].Location = new Point(this.ClientSize.Width * 327 / 1366, this.ClientSize.Height * 272 / 768);
+            btnPr[3].Location = new Point(this.ClientSize.Width * 170 / 1366, this.ClientSize.Height * 307 / 768);
+            btnPr[4].Location = new Point(this.ClientSize.Width * 327 / 1366, this.ClientSize.Height * 307 / 768);
+            btnPr[5].Location = new Point(this.ClientSize.Width * 181 / 1366, this.ClientSize.Height * 392 / 768);
+            btnPr[6].Location = new Point(this.ClientSize.Width * 181 / 1366, this.ClientSize.Height * 427 / 768);
+            btnPr[7].Location = new Point(this.ClientSize.Width * 181 / 1366, this.ClientSize.Height * 462 / 768);
+            btnPr[8].Location = new Point(this.ClientSize.Width * 181 / 1366, this.ClientSize.Height * 497 / 768);
+            btnPr[9].Location = new Point(this.ClientSize.Width * 181 / 1366, this.ClientSize.Height * 605 / 768);
+            btnPr[10].Location = new Point(this.ClientSize.Width * 327 / 1366, this.ClientSize.Height * 605 / 768);
+            btnPr[11].Location = new Point(this.ClientSize.Width * 181 / 1366, this.ClientSize.Height * 640 / 768);
+            btnPr[12].Location = new Point(this.ClientSize.Width * 327 / 1366, this.ClientSize.Height * 640 / 768);
+            btnPr[13].Location = new Point(this.ClientSize.Width * 691 / 1366, this.ClientSize.Height * 244 / 768);
+            btnPr[14].Location = new Point(this.ClientSize.Width * 691 / 1366, this.ClientSize.Height * 279 / 768);
+            btnPr[15].Location = new Point(this.ClientSize.Width * 691 / 1366, this.ClientSize.Height * 314 / 768);
+            btnPr[16].Location = new Point(this.ClientSize.Width * 691 / 1366, this.ClientSize.Height * 349 / 768);
+            btnPr[17].Location = new Point(this.ClientSize.Width * 691 / 1366, this.ClientSize.Height * 480 / 768);
+            btnPr[18].Location = new Point(this.ClientSize.Width * 691 / 1366, this.ClientSize.Height * 515 / 768);
+            btnPr[19].Location = new Point(this.ClientSize.Width * 691 / 1366, this.ClientSize.Height * 550 / 768);
         }
         void spawnarBotoes()
         {
@@ -1250,7 +1255,28 @@ namespace five_naites_ati_freires
             }
             else
             {
-                
+                voiceplayer = new Random();
+                switch (voiceplayer.Next(0, 6))
+                {
+                    case 0:
+                        TocarSom("voicelines/player-voiceline1.m4a");
+                        break;
+                    case 1:
+                        TocarSom("voicelines/player-voiceline2.m4a");
+                        break;
+                    case 2:
+                        TocarSom("voicelines/player-voiceline3.m4a");
+                        break;
+                    case 3:
+                        TocarSom("voicelines/player-voiceline4.m4a");
+                        break;
+                    case 4:
+                        TocarSom("voicelines/player-voiceline5.m4a");
+                        break;
+                    case 5:
+                        TocarSom("voicelines/player-voiceline6.m4a");
+                        break;
+                }
                 //MessageBox.Show("Eu não posso chutar nessa prova...");
             }
         }
@@ -1946,7 +1972,7 @@ namespace five_naites_ati_freires
             await Task.Delay(2500);
             pbload.Visible = false;
             iniciarJogo();
-            
+
         }
 
         private void btnJogar_MouseEnter(object sender, EventArgs e)
@@ -1994,6 +2020,7 @@ namespace five_naites_ati_freires
         private void btnajuda_Click(object sender, EventArgs e)
         {
             tiraromenudatela();
+            TrocarMusica("musgas/manual.m4a");
             this.BackgroundImage = Resources.diario1;
             criarbtnvoltar();
         }
@@ -2025,10 +2052,11 @@ namespace five_naites_ati_freires
         {
             resetarascoisas();
             colocaromenudatela();
-            if(btnvoltar != null)
-            btnvoltar.Visible = false;
-            if (btngamoverSair !=   null)
+            if (btnvoltar != null)
+                btnvoltar.Visible = false;
+            if (btngamoverSair != null)
                 btngamoverSair.Visible = false;
+            TrocarMusica("musgas/ttscreen.m4a");
             this.BackgroundImage = Resources.FNAFTitleScreen__1_;
         }
         private void btnajuda_MouseEnter(object sender, EventArgs e)
@@ -2054,6 +2082,16 @@ namespace five_naites_ati_freires
         private void btngamoverSair_MouseLeave(object sender, EventArgs e)
         {
             btngamoverSair.BackgroundImage = Resources.botaoGameOver;
+        }
+
+        private void lblMinutos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblMinutos_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -60,9 +60,9 @@
             // lblContador
             // 
             lblContador.AutoSize = true;
-            lblContador.Location = new Point(45, 258);
+            lblContador.Location = new Point(51, 344);
             lblContador.Name = "lblContador";
-            lblContador.Size = new Size(44, 15);
+            lblContador.Size = new Size(54, 20);
             lblContador.TabIndex = 1;
             lblContador.Text = "Timer: ";
             // 
@@ -74,36 +74,36 @@
             // lblRespostas
             // 
             lblRespostas.AutoSize = true;
-            lblRespostas.Location = new Point(45, 283);
+            lblRespostas.Location = new Point(51, 377);
             lblRespostas.Name = "lblRespostas";
-            lblRespostas.Size = new Size(70, 15);
+            lblRespostas.Size = new Size(88, 20);
             lblRespostas.TabIndex = 2;
             lblRespostas.Text = "nr respostas";
             // 
             // lblC
             // 
             lblC.AutoSize = true;
-            lblC.Location = new Point(45, 307);
+            lblC.Location = new Point(51, 409);
             lblC.Name = "lblC";
-            lblC.Size = new Size(73, 15);
+            lblC.Size = new Size(92, 20);
             lblC.TabIndex = 3;
             lblC.Text = "celular timer";
             // 
             // lblteste
             // 
             lblteste.AutoSize = true;
-            lblteste.Location = new Point(45, 333);
+            lblteste.Location = new Point(51, 444);
             lblteste.Name = "lblteste";
-            lblteste.Size = new Size(38, 15);
+            lblteste.Size = new Size(48, 20);
             lblteste.TabIndex = 4;
             lblteste.Text = "teste: ";
             // 
             // lbldirecao
             // 
             lbldirecao.AutoSize = true;
-            lbldirecao.Location = new Point(727, 46);
+            lbldirecao.Location = new Point(831, 61);
             lbldirecao.Name = "lbldirecao";
-            lbldirecao.Size = new Size(52, 15);
+            lbldirecao.Size = new Size(66, 20);
             lbldirecao.TabIndex = 5;
             lbldirecao.Text = "direcao: ";
             // 
@@ -123,9 +123,10 @@
             btnJogar.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnJogar.FlatStyle = FlatStyle.Flat;
             btnJogar.ForeColor = Color.Transparent;
-            btnJogar.Location = new Point(463, 304);
+            btnJogar.Location = new Point(529, 405);
+            btnJogar.Margin = new Padding(3, 4, 3, 4);
             btnJogar.Name = "btnJogar";
-            btnJogar.Size = new Size(438, 78);
+            btnJogar.Size = new Size(501, 104);
             btnJogar.TabIndex = 6;
             btnJogar.UseVisualStyleBackColor = false;
             btnJogar.Click += btnJogar_Click;
@@ -140,9 +141,9 @@
             // lblFreirep
             // 
             lblFreirep.AutoSize = true;
-            lblFreirep.Location = new Point(45, 364);
+            lblFreirep.Location = new Point(51, 485);
             lblFreirep.Name = "lblFreirep";
-            lblFreirep.Size = new Size(85, 15);
+            lblFreirep.Size = new Size(105, 20);
             lblFreirep.TabIndex = 7;
             lblFreirep.Text = "FreirePosition: ";
             lblFreirep.Visible = false;
@@ -158,9 +159,10 @@
             btnajuda.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnajuda.FlatStyle = FlatStyle.Flat;
             btnajuda.ForeColor = Color.Transparent;
-            btnajuda.Location = new Point(465, 393);
+            btnajuda.Location = new Point(531, 524);
+            btnajuda.Margin = new Padding(3, 4, 3, 4);
             btnajuda.Name = "btnajuda";
-            btnajuda.Size = new Size(438, 54);
+            btnajuda.Size = new Size(501, 72);
             btnajuda.TabIndex = 9;
             btnajuda.UseVisualStyleBackColor = false;
             btnajuda.Click += btnajuda_Click;
@@ -178,9 +180,10 @@
             btnopcao.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnopcao.FlatStyle = FlatStyle.Flat;
             btnopcao.ForeColor = Color.Transparent;
-            btnopcao.Location = new Point(463, 457);
+            btnopcao.Location = new Point(529, 609);
+            btnopcao.Margin = new Padding(3, 4, 3, 4);
             btnopcao.Name = "btnopcao";
-            btnopcao.Size = new Size(438, 65);
+            btnopcao.Size = new Size(501, 87);
             btnopcao.TabIndex = 10;
             btnopcao.UseVisualStyleBackColor = false;
             btnopcao.Click += btnopcao_Click;
@@ -198,9 +201,10 @@
             btnSair.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnSair.FlatStyle = FlatStyle.Flat;
             btnSair.ForeColor = Color.Transparent;
-            btnSair.Location = new Point(463, 539);
+            btnSair.Location = new Point(529, 719);
+            btnSair.Margin = new Padding(3, 4, 3, 4);
             btnSair.Name = "btnSair";
-            btnSair.Size = new Size(438, 78);
+            btnSair.Size = new Size(501, 104);
             btnSair.TabIndex = 11;
             btnSair.UseVisualStyleBackColor = false;
             btnSair.Click += btnSair_Click;
@@ -212,8 +216,9 @@
             pbtimer.BackColor = SystemColors.ActiveCaptionText;
             pbtimer.Image = Properties.Resources.relogio;
             pbtimer.Location = new Point(0, 0);
+            pbtimer.Margin = new Padding(3, 4, 3, 4);
             pbtimer.Name = "pbtimer";
-            pbtimer.Size = new Size(203, 96);
+            pbtimer.Size = new Size(232, 128);
             pbtimer.SizeMode = PictureBoxSizeMode.StretchImage;
             pbtimer.TabIndex = 12;
             pbtimer.TabStop = false;
@@ -222,11 +227,11 @@
             // lblhora
             // 
             lblhora.BackColor = SystemColors.ActiveCaptionText;
-            lblhora.Font = new Font("DS-Digital", 39.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblhora.Font = new Font("DS-Digital", 34.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblhora.ForeColor = Color.Red;
-            lblhora.Location = new Point(14, 16);
+            lblhora.Location = new Point(12, 20);
             lblhora.Name = "lblhora";
-            lblhora.Size = new Size(81, 64);
+            lblhora.Size = new Size(93, 85);
             lblhora.TabIndex = 13;
             lblhora.Text = "05";
             lblhora.TextAlign = ContentAlignment.MiddleCenter;
@@ -237,24 +242,27 @@
             // 
             lblMinutos.AutoSize = true;
             lblMinutos.BackColor = SystemColors.ActiveCaptionText;
-            lblMinutos.Font = new Font("DS-Digital", 40F, FontStyle.Bold | FontStyle.Italic);
+            lblMinutos.Font = new Font("DS-Digital", 34.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblMinutos.ForeColor = Color.Red;
-            lblMinutos.Location = new Point(110, 22);
+            lblMinutos.Location = new Point(132, 34);
             lblMinutos.Name = "lblMinutos";
-            lblMinutos.Size = new Size(77, 53);
+            lblMinutos.Size = new Size(81, 57);
             lblMinutos.TabIndex = 14;
             lblMinutos.Text = "00";
             lblMinutos.TextAlign = ContentAlignment.MiddleCenter;
             lblMinutos.Visible = false;
+            lblMinutos.Click += lblMinutos_Click_1;
             // 
             // pbload
             // 
+            pbload.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             pbload.BackColor = Color.Black;
             pbload.BackgroundImageLayout = ImageLayout.None;
             pbload.Image = Properties.Resources.iconeloading;
-            pbload.Location = new Point(1126, 517);
+            pbload.Location = new Point(1287, 689);
+            pbload.Margin = new Padding(3, 4, 3, 4);
             pbload.Name = "pbload";
-            pbload.Size = new Size(245, 234);
+            pbload.Size = new Size(280, 312);
             pbload.SizeMode = PictureBoxSizeMode.StretchImage;
             pbload.TabIndex = 15;
             pbload.TabStop = false;
@@ -262,12 +270,12 @@
             // 
             // telaJogo
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             BackgroundImage = Properties.Resources.FNAFTitleScreen__1_;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1366, 749);
+            ClientSize = new Size(1561, 999);
             Controls.Add(pbload);
             Controls.Add(lblMinutos);
             Controls.Add(lblhora);
@@ -284,6 +292,7 @@
             Controls.Add(lblContador);
             DoubleBuffered = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 4, 3, 4);
             Name = "telaJogo";
             StartPosition = FormStartPosition.WindowsDefaultBounds;
             Text = "FNAFreire";
